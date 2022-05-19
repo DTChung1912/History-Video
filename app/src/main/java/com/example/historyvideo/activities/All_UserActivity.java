@@ -48,7 +48,6 @@ public class All_UserActivity extends AppCompatActivity {
         adapter = new Adapter_All_User(All_UserActivity.this, R.layout.recycler_user_item, usersList);
         userRecycler.setAdapter(adapter);
 
-
         mData = FirebaseDatabase.getInstance().getReference("Users");
         fillData();
 
