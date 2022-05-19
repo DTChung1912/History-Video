@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/sidekick"
+        android:scaleType="centerCrop"
+        android:id="@+id/imgavaFeedBack"
+        android:layout_width="64dp"
+        android:layout_height="64dp" />
+    <LinearLayout
+        android:layout_marginLeft="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tvEmailFB"
+            android:layout_marginTop="3dp"
+            android:text="ndvu95@gmail.com"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:maxLength="50"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:id="@+id/contentFB"
+            android:text="Nội dung feedbackkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/timestampFB"
+            android:text="Ngày 15 tháng 11 năm 2018 Lúc 12h:13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

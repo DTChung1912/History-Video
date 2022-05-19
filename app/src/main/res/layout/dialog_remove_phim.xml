@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="Chỉnh Sửa"
+        android:textColor="@color/owl"
+        android:textSize="18sp" />
+
+    <TextView
+        android:text="Chọn chức năng mà bạn muốn thực hiện"
+        android:id="@+id/edtContent"
+        android:padding="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/custom_radius_corner"
+        android:gravity="center_horizontal"
+        android:textAlignment="inherit" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnHuy"
+            android:layout_marginRight="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_radius_corner_for_dialog"
+            android:text="Hủy"
+            android:textAllCaps="false"
+            android:textColor="#666868" />
+        <Button
+            android:id="@+id/btnSua"
+            android:layout_marginRight="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_radius_corner_for_dialog"
+            android:text="Sửa"
+            android:textAllCaps="false"
+            android:textColor="#446CB3" />
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_radius_corner_for_dialog"
+            android:text="Xóa"
+            android:textAllCaps="false"
+            android:textColor="@color/owl" />
+
+    </LinearLayout>
+</LinearLayout>

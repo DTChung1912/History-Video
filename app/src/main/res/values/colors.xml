@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="selected">#e74c3c</color>
+    <color name="notselected">#000000</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="bnv_tab_foreground">#000000</color>
+    <color name="gray">#e9e7e7</color>
+    <color name="gray_dark">#535252</color>
+    <color name="grayyy">#5c5959</color>
+    <color name="owl">#b1523e</color>
+    <color name="white">#FFFFFF</color>
+    <color name="mau_nen">#FFF9F9F9</color>
+    <color name="gray_with_opacity">#5c5959</color>
+    <color name="label">#455AA6</color>
+    <color name="sectionHeader">#000000</color>
+    <color name="online">#2C82C9</color>
+    <color name="offline">#BDC3C7</color>
+    <color name="action">#24252A</color>
+    <color name="cartoon">#FCB941</color>
+    <color name="adventure">#34495E</color>
+    <color name="horror">#446CB3</color>
+    <color name="scient">#00cec9</color>
+    <color name="documentary">#34495E</color>
+    <color name="criminal">#BFBFBF</color>
+    <color name="psy">#16A085</color>
+    <color name="love">#F1A9A0</color>
+    <color name="funny">#d63031</color>
+    <color name="war">#6c5ce7</color>
+    <color name="black">#000000</color>
+    <color name="red">#D60909</color>
+</resources>

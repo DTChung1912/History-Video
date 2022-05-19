@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home" />
+    <item
+        android:id="@+id/nav_admin"
+        android:icon="@drawable/ic_admin"
+        android:title="Admin" />
+    <item
+        android:id="@+id/nav_kid"
+        android:icon="@drawable/ic_child_friendly_black_24dp"
+        android:title="Kidz" />
+    <item
+        android:id="@+id/nav_more"
+        android:icon="@drawable/ic_reorder_black_24dp"
+        android:title="More" />
+</menu>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "146120580377",
+    "project_id": "historyvideo-7c3ed",
+    "storage_bucket": "historyvideo-7c3ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146120580377:android:89592e4c93501f982ab988",
+        "android_client_info": {
+          "package_name": "com.example.historyvideo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146120580377-hk2lkq4mj8fjgpmi50l87pbuefbueht5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDr94XqFGqb-Fr3omPsHWW8U4zFduZlLoQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146120580377-hk2lkq4mj8fjgpmi50l87pbuefbueht5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
