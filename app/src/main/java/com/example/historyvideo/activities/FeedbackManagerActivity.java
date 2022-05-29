@@ -58,7 +58,6 @@ public class FeedbackManagerActivity extends AppCompatActivity {
 
         ReloadData();
 
-
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -82,27 +81,26 @@ public class FeedbackManagerActivity extends AppCompatActivity {
                 date = fb.At;
                 content = fb.Content;
 
-                if(from != null && date != null && content != null) {
+                if (from != null && date != null && content != null) {
                     diaLogDetail();
                 }
                 mData.child(key).child("Status").setValue("Seen");
 
             }
         });
-
     }
 
-    private void searchFB(final String q){
+    private void searchFB(final String q) {
         mData = FirebaseDatabase.getInstance().getReference("FeedBack");
         Query query = mData;
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@androidx.annotation.NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists() && dataSnapshot != null){
+                if (dataSnapshot.exists() && dataSnapshot != null) {
                     arrayList.clear();
-                    for(DataSnapshot ds:dataSnapshot.getChildren()){
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         FeedBack fb = ds.getValue(FeedBack.class);
-                        if(fb.Content.contains(q)){
+                        if (fb.Content.contains(q)) {
                             arrayList.add(fb);
                         }
                     }
@@ -112,12 +110,10 @@ public class FeedbackManagerActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@androidx.annotation.NonNull DatabaseError databaseError) {
-
             }
         };
 
         query.addValueEventListener(valueEventListener);
-
     }
 
     private void diaLogDetail() {
@@ -132,14 +128,12 @@ public class FeedbackManagerActivity extends AppCompatActivity {
         lp.gravity = Gravity.CENTER;
         dialog.getWindow().setAttributes(lp);
 
-
         Button btnHuy = (Button) dialog.findViewById(R.id.btnDong);
-        TextView tvFrom= (TextView)dialog.findViewById(R.id.tvFrom);
-        TextView tvDate=(TextView)dialog.findViewById(R.id.tvDate);
-        EditText edtContent = (EditText)dialog.findViewById(R.id.edtContent);
+        TextView tvFrom = (TextView) dialog.findViewById(R.id.tvFrom);
+        TextView tvDate = (TextView) dialog.findViewById(R.id.tvDate);
+        EditText edtContent = (EditText) dialog.findViewById(R.id.edtContent);
 
-
-        tvFrom.setText("<"+from+">");
+        tvFrom.setText("<" + from + ">");
         tvDate.setText(date);
         edtContent.setText(content);
 
@@ -166,7 +160,6 @@ public class FeedbackManagerActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@androidx.annotation.NonNull DatabaseError databaseError) {
-
             }
         });
     }

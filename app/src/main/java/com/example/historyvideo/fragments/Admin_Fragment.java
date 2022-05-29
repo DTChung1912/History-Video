@@ -3,15 +3,14 @@ package com.example.historyvideo.fragments;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.historyvideo.R;
@@ -31,7 +30,8 @@ public class Admin_Fragment extends Fragment {
     TextView tvFeedCount;
     DatabaseReference mData;
     View view;
-    private int i =0;
+    private int i = 0;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -39,31 +39,31 @@ public class Admin_Fragment extends Fragment {
         getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         InitUI();
 
-
-
-            mData = FirebaseDatabase.getInstance().getReference("FeedBack");
-            mData.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    i=0;
-                    for(DataSnapshot ds:dataSnapshot.getChildren()){
-                        if(ds.exists()){
-                                String status = ds.child("Status").getValue(String.class);
-                                if(status != null && status.equals("Sent")){
-                                    i++;
-                                }
-                                tvFeedCount.setText(""+i);
+        mData = FirebaseDatabase.getInstance().getReference("FeedBack");
+        mData.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                i = 0;
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    if (ds.exists()) {
+                        String status = ds.child("Status").getValue(String.class);
+                        if (status != null && status.equals("Sent")) {
+                            i++;
+                        }
+                        if (i > 0) {
+                            tvFeedCount.setVisibility(View.VISIBLE);
+                            tvFeedCount.setText("" + i);
+                        } else {
+                            tvFeedCount.setVisibility(View.GONE);
                         }
                     }
                 }
+            }
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });
-
-
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
 
         linearPhim.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +80,6 @@ public class Admin_Fragment extends Fragment {
                 startActivity(intent);
             }
         });
-
 
         linearAd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +100,7 @@ public class Admin_Fragment extends Fragment {
         linearTheLoai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(),CategoryActivity.class);
+                Intent intent = new Intent(view.getContext(), CategoryActivity.class);
                 startActivity(intent);
             }
         });
@@ -114,8 +113,7 @@ public class Admin_Fragment extends Fragment {
         linearUser = (LinearLayout) view.findViewById(R.id.linearUser);
         linearAd = (LinearLayout) view.findViewById(R.id.linearAd);
         linearFeedback = (LinearLayout) view.findViewById(R.id.linearFeedback);
-        linearTheLoai = (LinearLayout)view.findViewById(R.id.linearCategory);
+        linearTheLoai = (LinearLayout) view.findViewById(R.id.linearCategory);
         tvFeedCount = (TextView) view.findViewById(R.id.tvnotiFeedbackCount);
     }
-
 }

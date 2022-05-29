@@ -18,9 +18,7 @@
             android:layout_height="505dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:background="@drawable/delhi">
-
-        </androidx.viewpager.widget.ViewPager>
+            android:background="@drawable/delhi" />
 
         <me.relex.circleindicator.CircleIndicator
             android:id="@+id/indicatorDefault"
@@ -36,8 +34,7 @@
             android:layout_marginEnd="4dp"
             android:layout_marginRight="4dp"
             android:layout_marginBottom="463dp"
-            app:ci_drawable="@drawable/circle_indicator_round"></me.relex.circleindicator.CircleIndicator>
-
+            app:ci_drawable="@drawable/circle_indicator_round" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/my_recycler_view"
@@ -45,11 +42,6 @@
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="400dp">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
+            android:layout_marginTop="400dp" />
     </RelativeLayout>
-
-
 </ScrollView>

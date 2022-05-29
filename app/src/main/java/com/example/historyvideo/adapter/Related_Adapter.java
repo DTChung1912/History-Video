@@ -3,23 +3,23 @@ package com.example.historyvideo.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.historyvideo.R;
 import com.example.historyvideo.activities.DetailActivity;
-import com.example.historyvideo.model.Phim;
 import com.example.historyvideo.model.Related_Phim;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class Related_Adapter extends RecyclerView.Adapter<Related_Adapter.SingleItemRowHolder>{
+public class Related_Adapter extends RecyclerView.Adapter<Related_Adapter.SingleItemRowHolder> {
     private ArrayList<Related_Phim> itemsList;
     private Context mContext;
 
@@ -31,7 +31,7 @@ public class Related_Adapter extends RecyclerView.Adapter<Related_Adapter.Single
     @NonNull
     @Override
     public SingleItemRowHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.related_single_card,null);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.related_single_card, null);
         SingleItemRowHolder mh = new SingleItemRowHolder(v);
         return mh;
     }
@@ -47,7 +47,7 @@ public class Related_Adapter extends RecyclerView.Adapter<Related_Adapter.Single
         holder.imgRelatedImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext.getApplicationContext(),DetailActivity.class);
+                Intent intent = new Intent(mContext.getApplicationContext(), DetailActivity.class);
                 intent.putExtra("phim_UID", id);
                 mContext.startActivity(intent);
             }
@@ -59,15 +59,14 @@ public class Related_Adapter extends RecyclerView.Adapter<Related_Adapter.Single
         return (null != itemsList ? itemsList.size() : 0);
     }
 
-    public class SingleItemRowHolder extends RecyclerView.ViewHolder{
+    public class SingleItemRowHolder extends RecyclerView.ViewHolder {
 
         private TextView tvRelatedTitle;
         private ImageView imgRelatedImage;
 
-
         public SingleItemRowHolder(View itemView) {
             super(itemView);
-            this.tvRelatedTitle = (TextView)itemView.findViewById(R.id.tvTitleRelated);
+            this.tvRelatedTitle = (TextView) itemView.findViewById(R.id.tvTitleRelated);
             this.imgRelatedImage = (ImageView) itemView.findViewById(R.id.itemImageRelated);
         }
     }

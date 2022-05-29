@@ -3,9 +3,142 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_account.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/back_icon_white.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/background_gray_dark.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/border_stroke.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/border_stroke_only_bottom.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/border_stroke_only_right.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/border_stroke_with_nothing.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/button.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/button_with_opacity.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/change.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/circle_indicator_round.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/custom_background_banner.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/custom_radius_corner.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/custom_radius_corner_for_dialog.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/custom_textbox.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/dialog.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/down_icon.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/elip_button_with_opacity.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/elip_button_with_opacity_action.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/elip_button_with_opacity_added.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/elip_button_with_opacity_added_blue.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/elip_button_with_opacity_adventure.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/elip_button_with_opacity_carrot.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/elip_button_with_opacity_cartoon.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/elip_button_with_opacity_criminal.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/elip_button_with_opacity_documentary.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/elip_button_with_opacity_funny.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/elip_button_with_opacity_horror.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/elip_button_with_opacity_love.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/elip_button_with_opacity_pink.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/elip_button_with_opacity_psy.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/elip_button_with_opacity_purple.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/elip_button_with_opacity_red.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/elip_button_with_opacity_scient.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/elip_button_with_opacity_war.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/gray_background.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/green_dot_online.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_action.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_add_song.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_admin.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_admin_white.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_arrow_back_black_24dp.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_assignment_black_24dp.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_assignment_ind_black_24dp.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_baseline_playlist_add_24px.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_baseline_playlist_add_check_24px.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_cancel_black_24dp.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_cartoon.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_child_friendly_black_24dp.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_clear_black_24dp.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_document.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_edit_black_24dp.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_email.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_email_black_24dp.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_exclamation.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_facebook_logo_button.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_feedback.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_ghost.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_heartbeat.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_home_black_24dp.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_information_symbol.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_journey.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_laughing.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_list.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_local_movies_black_24dp.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_lock_black_24dp.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_ondemand_video_black_24dp.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_phone_iphone_black_24dp.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_play_arrow_black_24dp.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_playlist_add_black_24dp.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_psychology.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_reorder_black_24dp.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_rob.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_search_black_24dp.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_slider.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_soldier.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_ufo.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/ic_video.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/layout_bot.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/mint_background.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/person.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/play_button_background.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/play_icon.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/red_background.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/share_icon.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/up_icon.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable-v24/watch_later_icon.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable/ic_fullscreen.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable/ic_fullscreen_exit.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1645" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_account.xml" value="0.264" />
         <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_all__user.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_banner_manager.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_category.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_change_password_.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_detail.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_detail_base_by_category.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_edit_banner.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_exo_player.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_feedback_manager.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_forgot_password_.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_home2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_home_.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_login_email_.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_manager_add_phim.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_phim__info.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_ql__phim.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_reg_.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_search.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_search_.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_splash_screen_.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_start_.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_test.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_user_information.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/activity_watch__later_.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/banner_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/banner_list_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/cate_item_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/custom_grid_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/custom_grid_item_wl.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/custom_gridview_item_search.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/dialog_add_banner.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/dialog_changepassword.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/dialog_feedback.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/dialog_feedback_content.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/dialog_remove_phim.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/dong_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/exo_playback_control_view.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/feedback_list_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/fragment_admin.xml" value="0.4" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/fragment_kid.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/fragment_more.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/grid_single_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/horizontal_recycler_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/horizontal_single_card.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/list_group.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/list_item.xml" value="0.25416666666666665" />
@@ -13,6 +146,8 @@
         <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/recycler_user_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/related_single_card.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/layout/user_log_list_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/menu/bottom_navigation.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TT/AndroidStudioProjects/HistoryVideo/app/src/main/res/menu/menu_search_toolbar.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

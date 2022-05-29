@@ -3,12 +3,12 @@ package com.example.historyvideo.activities;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.content.ContextCompat;
@@ -48,7 +48,6 @@ public class Search_Activity extends AppCompatActivity {
         gvSearch.setAdapter(adapterSearch);
         fillDataAll();
 
-
         tvSearch.setIconified(false);
         tvSearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -65,7 +64,8 @@ public class Search_Activity extends AppCompatActivity {
         });
 
     }
-    private void fillDataAll(){
+
+    private void fillDataAll() {
         mData = FirebaseDatabase.getInstance().getReference("Phim");
 
         Query query = mData.orderByChild("tenPhim");
@@ -74,8 +74,8 @@ public class Search_Activity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 listPhim.clear();
-                if(dataSnapshot.exists()){
-                    for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         Phim phim = snapshot.getValue(Phim.class);
                         listPhim.add(phim);
                     }
@@ -100,26 +100,22 @@ public class Search_Activity extends AppCompatActivity {
         query.addValueEventListener(valueEventListener);
     }
 
-
-
     private void fillData(final String q) {
 
         mData = FirebaseDatabase.getInstance().getReference("Phim");
-
         Query query = mData.orderByChild("tenPhim");
-
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 listPhim.clear();
-                if(dataSnapshot.exists()){
-                    for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
 
                         Phim phim = snapshot.getValue(Phim.class);
                         String tenthuong = phim.getTenPhim().toLowerCase();
-                            if(tenthuong.contains(q)){
-                                listPhim.add(phim);
-                            }
+                        if (tenthuong.contains(q)) {
+                            listPhim.add(phim);
+                        }
                     }
                     adapterSearch.notifyDataSetChanged();
                 }
@@ -136,7 +132,6 @@ public class Search_Activity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         };
         query.addValueEventListener(valueEventListener);

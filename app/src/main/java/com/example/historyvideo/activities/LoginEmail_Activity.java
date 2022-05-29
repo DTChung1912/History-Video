@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
@@ -17,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -45,7 +45,6 @@ public class LoginEmail_Activity extends AppCompatActivity {
         edtPasswordLogin = (EditText) findViewById(R.id.edtMatKhauLogin);
         tvForgotPassword = (TextView) findViewById(R.id.tvQuenMatKhau);
         doimau();
-
     }
 
     private void doimau() {
@@ -83,13 +82,13 @@ public class LoginEmail_Activity extends AppCompatActivity {
 
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
-                            if(user.isEmailVerified()){
+                            if (user.isEmailVerified()) {
                                 Toast.makeText(LoginEmail_Activity.this, "You're Logged In", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(LoginEmail_Activity.this, Home_Activity.class);
                                 pd.dismiss();
                                 startActivity(intent);
                                 finish();
-                            }else{
+                            } else {
                                 pd.dismiss();
                                 Toast.makeText(LoginEmail_Activity.this, "Tài khoản chưa được kích hoạt", Toast.LENGTH_SHORT).show();
                             }
@@ -97,16 +96,12 @@ public class LoginEmail_Activity extends AppCompatActivity {
                             Toast.makeText(LoginEmail_Activity.this, "Tài Khoản Hoặc Mật Khẩu Không Đúng.", Toast.LENGTH_SHORT).show();
                             pd.dismiss();
                         }
-
                     }
                 });
-
     }
 
     public void clickBackToStart1(View view) {
         Intent intent = new Intent(LoginEmail_Activity.this, Start_Activity.class);
         startActivity(intent);
     }
-
-
 }

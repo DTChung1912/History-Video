@@ -3,14 +3,14 @@ package com.example.historyvideo.fragments;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -52,7 +52,6 @@ public class Kid_Fragment extends Fragment {
         gridviewKid.setAdapter(adapter);
         readData();
 
-
         gridviewKid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -65,7 +64,6 @@ public class Kid_Fragment extends Fragment {
                 startActivity(manhinhDetail);
             }
         });
-
 
         return view;
     }
@@ -95,7 +93,6 @@ public class Kid_Fragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }

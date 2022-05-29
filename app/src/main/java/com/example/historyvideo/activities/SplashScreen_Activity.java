@@ -16,7 +16,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class SplashScreen_Activity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;;
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,23 +28,21 @@ public class SplashScreen_Activity extends AppCompatActivity {
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.gray_dark));
 
+        mAuth = FirebaseAuth.getInstance();
 
-    mAuth = FirebaseAuth.getInstance();
-
-    new Handler().postDelayed(new Runnable() {
-        @Override
-        public void run() {
-            FirebaseUser currentUser = mAuth.getCurrentUser();
-            if(currentUser != null && currentUser.isEmailVerified()){
-                Intent intent1 = new Intent(SplashScreen_Activity.this, Home_Activity.class);
-                startActivity(intent1);
-            }else{
-                Intent intent =new Intent(SplashScreen_Activity.this, Start_Activity.class);
-                startActivity(intent);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                FirebaseUser currentUser = mAuth.getCurrentUser();
+                if (currentUser != null && currentUser.isEmailVerified()) {
+                    Intent intent1 = new Intent(SplashScreen_Activity.this, Home_Activity.class);
+                    startActivity(intent1);
+                } else {
+                    Intent intent = new Intent(SplashScreen_Activity.this, Start_Activity.class);
+                    startActivity(intent);
+                }
+                finish();
             }
-            finish();
-        }
-    }, 3500);
-
-
-}}
+        }, 1000);
+    }
+}

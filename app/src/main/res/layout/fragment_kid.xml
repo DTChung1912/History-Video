@@ -2,21 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
+
     <TextView
-        android:layout_margin="10dp"
-        android:layout_gravity="center"
-        android:textSize="20sp"
-        android:text="Hoạt Hình"
-        android:textStyle="bold"
-        android:textColor="#020202"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="Hoạt Hình"
+        android:textColor="#020202"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
     <GridView
         android:id="@+id/gvKidz"
-        android:columnWidth="110dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:numColumns="3"></GridView>
+        android:columnWidth="110dp"
+        android:numColumns="3" />
 </LinearLayout>

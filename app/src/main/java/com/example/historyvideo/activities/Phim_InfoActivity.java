@@ -3,7 +3,6 @@ package com.example.historyvideo.activities;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -12,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -48,7 +48,6 @@ public class Phim_InfoActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spTheLoai.setAdapter(adapter);
 
-
         edtID.setFocusable(false);
         edtID.setClickable(false);
 
@@ -82,7 +81,6 @@ public class Phim_InfoActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
         fillCate();
@@ -95,7 +93,6 @@ public class Phim_InfoActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
     }
@@ -120,7 +117,6 @@ public class Phim_InfoActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }
@@ -159,7 +155,6 @@ public class Phim_InfoActivity extends AppCompatActivity {
         String des = edtDes.getText().toString().trim();
         String actor = edtActor.getText().toString().trim();
 
-
         mData.child("tenPhim").setValue(name);
         mData.child("linkPhim").setValue(link);
         mData.child("linksub").setValue(sub);
@@ -169,6 +164,5 @@ public class Phim_InfoActivity extends AppCompatActivity {
         mData.child("dienvienPhim").setValue(actor);
 
         Toast.makeText(this, "Cập Nhật Thông Tin Phim Thành Công", Toast.LENGTH_SHORT).show();
-
     }
 }

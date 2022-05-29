@@ -29,34 +29,32 @@
     </androidx.appcompat.widget.Toolbar>
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:background="@drawable/button_with_opacity"
         android:id="@+id/profile_Image"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
+        android:background="@drawable/button_with_opacity"
+        android:elevation="3dp"
         android:scaleType="centerCrop"
         android:src="@drawable/person"
-        android:elevation="3dp"
         app:civ_border_color="#FF000000"
-        app:civ_border_width="1dp"
-         />
+        app:civ_border_width="1dp" />
 
     <TextView
-        android:linksClickable="true"
-        android:onClick="clickEditPhoto"
         android:id="@+id/tveditPhoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
+        android:linksClickable="true"
+        android:onClick="clickEditPhoto"
         android:text="Edit Photo" />
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-
         android:gravity="center"
         android:text="Thông Tin Tài Khoản"
         android:textColor="@color/owl"
@@ -71,14 +69,14 @@
         app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout">
 
         <EditText
-            android:drawablePadding="8dp"
-            android:drawableLeft="@drawable/person"
             android:id="@+id/edtDisplayName"
             android:layout_width="300dp"
-            android:inputType="text"
-            android:imeOptions="actionNext"
             android:layout_height="wrap_content"
-            android:hint="Tên Hiển Thị" />
+            android:drawableLeft="@drawable/person"
+            android:drawablePadding="8dp"
+            android:hint="Tên Hiển Thị"
+            android:imeOptions="actionNext"
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -89,15 +87,15 @@
         app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout">
 
         <EditText
-            android:drawablePadding="8dp"
             android:id="@+id/edtDisplayEmail"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:imeOptions="actionNext"
             android:drawableLeft="@drawable/ic_email_black_24dp"
+            android:drawablePadding="8dp"
             android:editable="false"
-            android:hint="Email" />
+            android:hint="Email"
+            android:imeOptions="actionNext"
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -109,11 +107,11 @@
         app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout">
 
         <EditText
-            android:drawablePadding="8dp"
             android:id="@+id/edtPhone"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_phone_iphone_black_24dp"
+            android:drawablePadding="8dp"
             android:hint="Số Điện Thoại"
             android:imeOptions="actionDone"
             android:inputType="number" />
@@ -134,12 +132,12 @@
             android:orientation="horizontal">
 
             <EditText
-                android:drawablePadding="8dp"
-                android:editable="false"
                 android:id="@+id/edtPassword"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_lock_black_24dp"
+                android:drawablePadding="8dp"
+                android:editable="false"
                 android:hint="Mật Khẩu"
                 android:inputType="textPassword"
                 android:text="fdsafdsaf" />

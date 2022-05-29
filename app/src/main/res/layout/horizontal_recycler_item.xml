@@ -2,24 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
-        <TextView
-            android:layout_marginLeft="5dp"
-            android:textColor="@color/white"
-            android:layout_marginTop="10dp"
-            android:text="Popular Movies"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:id="@+id/itemTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/itemTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:text="Popular Movies"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_list"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:orientation="horizontal">
-
-    </androidx.recyclerview.widget.RecyclerView>
+        android:orientation="horizontal" />
 </LinearLayout>

@@ -32,23 +32,23 @@ public class Adapter_QC extends ArrayAdapter<QuangCao> {
     public Adapter_QC(@NonNull Context context, int resource, @NonNull List<QuangCao> objects) {
         super(context, resource, objects);
         this.quangCaoList = objects;
-        inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         final ViewHolder holder;
-        if(convertView == null){
+        if (convertView == null) {
             holder = new ViewHolder();
-            convertView = inflater.inflate(R.layout.banner_list_item,parent,false);
+            convertView = inflater.inflate(R.layout.banner_list_item, parent, false);
             holder.imgHinhBanner = convertView.findViewById(R.id.imgBanner);
             holder.idphimBanner = convertView.findViewById(R.id.tvidPhim);
             holder.tenphimBanner = convertView.findViewById(R.id.tvtenPhimQuangCao);
 
             convertView.setTag(holder);
-        }else{
-            holder = (ViewHolder)convertView.getTag();
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
 
         QuangCao quangCao = quangCaoList.get(position);
@@ -57,32 +57,27 @@ public class Adapter_QC extends ArrayAdapter<QuangCao> {
         Uri url_Anh = Uri.parse(linkanh);
         String idPhim = quangCao.getIdPhim();
 
-
         Picasso.get().load(url_Anh).into(holder.imgHinhBanner);
-        holder.idphimBanner.setText("ID phim: "+idPhim);
+        holder.idphimBanner.setText("ID phim: " + idPhim);
         mData = FirebaseDatabase.getInstance().getReference("Phim");
         mData.child(idPhim).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@androidx.annotation.NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()){
+                if (dataSnapshot.exists()) {
                     String tenPhim = dataSnapshot.child("tenPhim").getValue(String.class);
-                    holder.tenphimBanner.setText("Phim: "+tenPhim);
+                    holder.tenphimBanner.setText("Phim: " + tenPhim);
                 }
             }
 
             @Override
             public void onCancelled(@androidx.annotation.NonNull DatabaseError databaseError) {
-
             }
         });
-
-
-
 
         return convertView;
     }
 
-    public static class ViewHolder{
+    public static class ViewHolder {
         ImageView imgHinhBanner;
         TextView idphimBanner;
         TextView tenphimBanner;

@@ -12,6 +12,7 @@
         android:layout_height="250dp"
         android:layout_gravity="center"
         android:src="@drawable/moo" />
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="30dp" />
@@ -22,56 +23,70 @@
         android:layout_gravity="center"
         android:layout_margin="10dp"
         app:cardElevation="5dp">
-            <TextView
-                android:textColor="@color/owl"
-                android:onClick="loginWithFaceBook"
-                android:id="@+id/loginFacebook"
-                android:layout_width="300dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:drawableLeft="@drawable/ic_facebook_logo_button"
-                android:gravity="center"
-                android:text="Đăng Nhập Bằng Facebook"
-                android:paddingLeft="5dp"
-                android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/loginFacebook"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:drawableLeft="@drawable/ic_facebook_logo_button"
+            android:gravity="center"
+            android:onClick="loginWithFaceBook"
+            android:paddingLeft="5dp"
+            android:text="Đăng Nhập Bằng Facebook"
+            android:textColor="@color/owl"
+            android:textSize="16sp"
+            tools:ignore="OnClick" />
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="10dp"
         app:cardElevation="5dp">
+
         <TextView
-            android:textColor="@color/owl"
-            android:drawablePadding="-30dp"
-            android:onClick="clickLoginWithEmail"
             android:layout_width="300dp"
             android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
             android:drawableLeft="@drawable/ic_email"
+            android:drawablePadding="-30dp"
             android:gravity="center"
-            android:text="Đăng Nhập Bằng Email"
+            android:onClick="clickLoginWithEmail"
             android:paddingLeft="5dp"
+            android:text="Đăng Nhập Bằng Email"
+            android:textColor="@color/owl"
             android:textSize="16sp" />
     </androidx.cardview.widget.CardView>
-        <TextView
-            android:textColor="@color/owl"
-            android:id="@+id/tvReg"
-            android:layout_gravity="center"
-            android:padding="5dp"
-            android:text="Bạn chưa có tài khoản? Đăng Ký"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    <RelativeLayout
+
+    <TextView
+        android:id="@+id/tvReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:padding="5dp"
+        android:text="Bạn chưa có tài khoản? Đăng Ký"
+        android:textColor="@color/owl" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:textColor="@color/owl"
-            android:text="Morning Of Owl v0.02"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button_with_facebook"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Morning Of Owl v0.02"
+            android:textColor="@color/owl" />
     </RelativeLayout>
 </LinearLayout>

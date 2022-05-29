@@ -8,7 +8,6 @@ import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import android.view.Display;
 import android.view.View;
 import android.view.Window;
@@ -18,6 +17,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -67,10 +67,8 @@ public class UserInformationActivity extends AppCompatActivity {
         adapter = new Adapter_User_Log(context, R.layout.user_log_list_item, arrayList);
         lichsuUser.setAdapter(adapter);
 
-
         Intent intent = getIntent();
         Users users = (Users) intent.getSerializableExtra("dulieu");
-
 
         String hoten = users.HoTen;
         email = users.Email;
@@ -78,11 +76,9 @@ public class UserInformationActivity extends AppCompatActivity {
         String last_seen = users.Last_Active;
         String status = users.Status;
 
-
         tvHoTen.setText(hoten);
         tvMail.setText("<" + email + ">");
         tvPhone.setText(phone);
-
 
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -103,12 +99,10 @@ public class UserInformationActivity extends AppCompatActivity {
 
             @Override
             public void onBitmapFailed(Exception e, Drawable errorDrawable) {
-
             }
 
             @Override
             public void onPrepareLoad(Drawable placeHolderDrawable) {
-
             }
         });
 
@@ -129,25 +123,23 @@ public class UserInformationActivity extends AppCompatActivity {
         mDataLog.child(uid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()){
+                if (dataSnapshot.exists()) {
                     arrayList.clear();
-                    for(DataSnapshot ds:dataSnapshot.getChildren()){
-                        if(ds.exists()){
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                        if (ds.exists()) {
                             String dateTime = ds.child("dateTime").getValue().toString();
                             String watchedMovie = ds.child("movieWatched").getValue().toString();
                             arrayList.add(new User_Log(dateTime, watchedMovie));
-                        }else{
+                        } else {
                             Toast.makeText(context, "Nhật ký xem phim của người dùng chưa có", Toast.LENGTH_SHORT).show();
                         }
                     }
-
                     adapter.notifyDataSetChanged();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
 
@@ -165,10 +157,8 @@ public class UserInformationActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
-
     }
 
 
@@ -188,5 +178,4 @@ public class UserInformationActivity extends AppCompatActivity {
     public void clickBackToAllUser(View view) {
         finish();
     }
-
 }

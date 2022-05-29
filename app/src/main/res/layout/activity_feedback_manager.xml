@@ -3,44 +3,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activities.FeedbackManagerActivity">
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
-                android:onClick="clickBackToAdmin1"
-                android:layout_marginRight="10dp"
-                android:src="@drawable/ic_arrow_back_black_24dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:onClick="clickBackToAdmin1"
+                android:src="@drawable/ic_arrow_back_black_24dp" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <androidx.appcompat.widget.SearchView
                     android:id="@+id/searchFeedBack"
-                    app:showAsAction="always|collapseActionView"
-                    android:layout_alignParentRight="true"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></androidx.appcompat.widget.SearchView>
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    app:showAsAction="always|collapseActionView" />
             </RelativeLayout>
         </androidx.appcompat.widget.Toolbar>
-
     </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/gray" />
+
     <ListView
-        android:layout_marginTop="5dp"
         android:id="@+id/lvFeedback"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </ListView>
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp" />
 </LinearLayout>

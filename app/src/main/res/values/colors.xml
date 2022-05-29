@@ -31,4 +31,5 @@
     <color name="war">#6c5ce7</color>
     <color name="black">#000000</color>
     <color name="red">#D60909</color>
+    <color name="black_overlay">#66000000</color>
 </resources>

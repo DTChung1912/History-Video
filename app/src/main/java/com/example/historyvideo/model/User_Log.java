@@ -5,7 +5,6 @@ public class User_Log {
     public String movieWatched;
 
     public User_Log() {
-
     }
 
     public User_Log(String dateTime, String movieWatched) {

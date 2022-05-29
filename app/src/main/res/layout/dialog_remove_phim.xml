@@ -13,14 +13,14 @@
         android:textSize="18sp" />
 
     <TextView
-        android:text="Chọn chức năng mà bạn muốn thực hiện"
         android:id="@+id/edtContent"
-        android:padding="7dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:background="@drawable/custom_radius_corner"
         android:gravity="center_horizontal"
+        android:padding="7dp"
+        android:text="Chọn chức năng mà bạn muốn thực hiện"
         android:textAlignment="inherit" />
 
     <LinearLayout
@@ -31,22 +31,24 @@
 
         <Button
             android:id="@+id/btnHuy"
-            android:layout_marginRight="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
             android:background="@drawable/custom_radius_corner_for_dialog"
             android:text="Hủy"
             android:textAllCaps="false"
             android:textColor="#666868" />
+
         <Button
             android:id="@+id/btnSua"
-            android:layout_marginRight="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
             android:background="@drawable/custom_radius_corner_for_dialog"
             android:text="Sửa"
             android:textAllCaps="false"
             android:textColor="#446CB3" />
+
         <Button
             android:id="@+id/btnSubmit"
             android:layout_width="wrap_content"
@@ -55,6 +57,5 @@
             android:text="Xóa"
             android:textAllCaps="false"
             android:textColor="@color/owl" />
-
     </LinearLayout>
 </LinearLayout>

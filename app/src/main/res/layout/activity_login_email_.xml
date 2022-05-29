@@ -73,7 +73,6 @@
                 android:padding="10dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
         <TextView
             android:id="@+id/tvQuenMatKhau"
             android:layout_width="wrap_content"
@@ -84,7 +83,6 @@
             android:text="Quên Mật Khẩu? Nhấn Vào Đây"
             android:textColor="@color/owl"
             android:textSize="15sp" />
-
 
         <Button
             android:layout_width="100dp"
@@ -98,7 +96,5 @@
             android:text="Đăng Nhập"
             android:textAllCaps="false"
             android:textColor="#FFFFFF" />
-
     </LinearLayout>
-
 </LinearLayout>

@@ -11,10 +11,12 @@
         android:text="Feedback"
         android:textColor="@color/owl"
         android:textSize="18sp" />
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <TextView
 
             android:layout_width="wrap_content"
@@ -23,6 +25,7 @@
             android:text="Gửi Bởi:"
             android:textColor="@color/owl"
             android:textSize="18sp" />
+
         <TextView
             android:id="@+id/tvFrom"
             android:layout_width="wrap_content"
@@ -32,18 +35,20 @@
             android:textColor="@color/owl"
             android:textSize="15sp" />
     </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <TextView
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:text="Ngày Gửi:"
             android:textColor="@color/owl"
             android:textSize="18sp" />
+
         <TextView
             android:id="@+id/tvDate"
             android:layout_width="wrap_content"
@@ -56,13 +61,13 @@
 
     <EditText
         android:id="@+id/edtContent"
-        android:padding="7dp"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_margin="15dp"
         android:background="@drawable/custom_radius_corner"
         android:gravity="start"
         android:hint="Phản hồi những gì bạn cảm thấy chưa hài lòng ở ứng dụng của chúng tôi"
+        android:padding="7dp"
         android:textAlignment="inherit" />
 
     <LinearLayout
@@ -71,18 +76,15 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-
-
         <Button
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
             android:id="@+id/btnDong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/button"
             android:text="Đóng"
             android:textAllCaps="false"
             android:textColor="@color/white" />
-
     </LinearLayout>
 </LinearLayout>

@@ -3,33 +3,38 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
+
     <LinearLayout
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
         <ImageView
-            android:src="@drawable/sidekick"
             android:id="@+id/imgBanner"
             android:layout_width="45dp"
-            android:layout_height="60dp" />
+            android:layout_height="60dp"
+            android:src="@drawable/sidekick" />
+
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
             <TextView
-                android:layout_marginLeft="5dp"
-                android:text="-LPApVA6QjeVUWPrKdMu"
                 android:id="@+id/tvidPhim"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="Minions"
+                android:text="-LPApVA6QjeVUWPrKdMu" />
+
+            <TextView
                 android:id="@+id/tvtenPhimQuangCao"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Minions" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

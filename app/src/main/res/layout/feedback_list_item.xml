@@ -3,36 +3,41 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
+
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_marginLeft="10dp"
-        android:src="@drawable/sidekick"
-        android:scaleType="centerCrop"
         android:id="@+id/imgavaFeedBack"
         android:layout_width="64dp"
-        android:layout_height="64dp" />
+        android:layout_height="64dp"
+        android:layout_marginLeft="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sidekick" />
+
     <LinearLayout
-        android:layout_marginLeft="5dp"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:orientation="vertical">
+
         <TextView
             android:id="@+id/tvEmailFB"
-            android:layout_marginTop="3dp"
-            android:text="ndvu95@gmail.com"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="ndvu95@gmail.com" />
+
         <TextView
+            android:id="@+id/contentFB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
             android:maxLength="50"
             android:maxLines="1"
-            android:ellipsize="end"
-            android:id="@+id/contentFB"
-            android:text="Nội dung feedbackkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:text="Nội dung feedbackkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk" />
+
         <TextView
             android:id="@+id/timestampFB"
-            android:text="Ngày 15 tháng 11 năm 2018 Lúc 12h:13"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Ngày 15 tháng 11 năm 2018 Lúc 12h:13" />
     </LinearLayout>
 </LinearLayout>

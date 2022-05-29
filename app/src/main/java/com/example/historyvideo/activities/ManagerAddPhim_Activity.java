@@ -3,7 +3,6 @@ package com.example.historyvideo.activities;
 import android.app.ProgressDialog;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -12,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -34,6 +34,7 @@ public class ManagerAddPhim_Activity extends AppCompatActivity {
     ArrayList<String> arrayList;
     ArrayAdapter<String> adapter;
     private String theLoai;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +44,8 @@ public class ManagerAddPhim_Activity extends AppCompatActivity {
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.gray_dark));
         initUI();
 
-        arrayList= new ArrayList<>();
-        adapter = new ArrayAdapter(ManagerAddPhim_Activity.this, android.R.layout.simple_spinner_item,arrayList);
+        arrayList = new ArrayList<>();
+        adapter = new ArrayAdapter(ManagerAddPhim_Activity.this, android.R.layout.simple_spinner_item, arrayList);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spTheLoai.setAdapter(adapter);
 
@@ -69,9 +70,9 @@ public class ManagerAddPhim_Activity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 arrayList.clear();
-                arrayList.add(0,"- Chọn Thể Loại -");
-                if(dataSnapshot.exists()){
-                    for(DataSnapshot ds:dataSnapshot.getChildren()){
+                arrayList.add(0, "- Chọn Thể Loại -");
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         String tl = ds.child("TenTheLoai").getValue().toString();
                         arrayList.add(tl);
                     }
@@ -94,7 +95,7 @@ public class ManagerAddPhim_Activity extends AppCompatActivity {
         edtLinkPoster = (EditText) findViewById(R.id.edtPoster);
         edtMoTa = (EditText) findViewById(R.id.edtMota);
         edtDienVien = (EditText) findViewById(R.id.edtDienVien);
-        spTheLoai = (Spinner)findViewById(R.id.spTheLoai);
+        spTheLoai = (Spinner) findViewById(R.id.spTheLoai);
 
     }
 

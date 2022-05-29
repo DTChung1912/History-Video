@@ -21,8 +21,6 @@ public class Adapter_User_Log extends ArrayAdapter<User_Log> {
     Context context;
     LayoutInflater inflater;
 
-
-
     public Adapter_User_Log(@NonNull Context context, int resource, @NonNull List<User_Log> objects) {
         super(context, resource, objects);
         this.logList = objects;
@@ -32,32 +30,29 @@ public class Adapter_User_Log extends ArrayAdapter<User_Log> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        ViewHolder holder ;
-        if(convertView == null){
+        ViewHolder holder;
+        if (convertView == null) {
             holder = new ViewHolder();
             convertView = inflater.inflate(R.layout.user_log_list_item, parent, false);
-            holder.imgMovie = (ImageView)convertView.findViewById(R.id.imgMovie);
-            holder.tvdateTime = (TextView)convertView.findViewById(R.id.tvdateTime);
-            holder.tvMovieName = (TextView)convertView.findViewById(R.id.tvMovieName);
+            holder.imgMovie = (ImageView) convertView.findViewById(R.id.imgMovie);
+            holder.tvdateTime = (TextView) convertView.findViewById(R.id.tvdateTime);
+            holder.tvMovieName = (TextView) convertView.findViewById(R.id.tvMovieName);
 
             convertView.setTag(holder);
-        }else{
+        } else {
             holder = (ViewHolder) convertView.getTag();
         }
-
 
         String dateTime = logList.get(position).getDateTime();
         String movieName = logList.get(position).getMovieWatched();
 
         holder.tvdateTime.setText(dateTime);
-        holder.tvMovieName.setText("Phim: "+movieName);
-
-
+        holder.tvMovieName.setText("Phim: " + movieName);
 
         return convertView;
     }
 
-    public static class ViewHolder{
+    public static class ViewHolder {
         ImageView imgMovie;
         TextView tvdateTime;
         TextView tvMovieName;

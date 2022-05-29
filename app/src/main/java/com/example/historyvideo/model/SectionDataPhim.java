@@ -8,7 +8,6 @@ public class SectionDataPhim {
     private String headerTitle;
     private ArrayList<Phim> allPhimSections;
 
-
     public SectionDataPhim(String headerTitle, ArrayList<Phim> allPhimSections) {
         this.headerTitle = headerTitle;
         this.allPhimSections = allPhimSections;

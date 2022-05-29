@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".activities.CategoryActivity">
+
     <androidx.appcompat.widget.Toolbar
-        android:elevation="5dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:elevation="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -17,10 +17,10 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:onClick="clickBacktoMore"
                 android:id="@+id/imgHinhBack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="clickBacktoMore"
                 android:src="@drawable/ic_arrow_back_black_24dp" />
 
             <TextView
@@ -28,25 +28,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:textSize="18sp"
                 android:maxLines="1"
+                android:text="Thể Loại Phim"
                 android:textColor="#000000"
-                android:text="Thể Loại Phim">
-
-            </TextView>
+                android:textSize="18sp" />
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <ListView
             android:id="@+id/lvCategory"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </ListView>
-
-
+            android:layout_height="match_parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </LinearLayout>

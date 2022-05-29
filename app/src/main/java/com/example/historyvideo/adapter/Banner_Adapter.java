@@ -3,14 +3,14 @@ package com.example.historyvideo.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.historyvideo.R;
@@ -71,7 +71,6 @@ public class Banner_Adapter extends PagerAdapter {
         ImageView img = (ImageView) view.findViewById(R.id.imgBackGroundBanner);
         ImageView imgPlay = (ImageView) view.findViewById(R.id.imgPlay);
 
-
         Picasso.get()
                 .load(Uri.parse(arrayListBanner.get(position).getLinkAnh()))
                 .into(img);
@@ -114,7 +113,6 @@ public class Banner_Adapter extends PagerAdapter {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-
                     }
                 });
 
@@ -122,13 +120,10 @@ public class Banner_Adapter extends PagerAdapter {
                 mData.child(key).child("tenPhim").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-
                         DatabaseReference dataLog = FirebaseDatabase.getInstance().getReference();
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
                         String uid = user.getUid();
-
 
                         Calendar cal = Calendar.getInstance();
                         int year = cal.get(Calendar.YEAR);
@@ -148,7 +143,6 @@ public class Banner_Adapter extends PagerAdapter {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-
                     }
                 });
 
@@ -159,7 +153,6 @@ public class Banner_Adapter extends PagerAdapter {
                         String link = map.get("linkPhim");
                         String sub = map.get("linksub");
 
-
                         Intent intent = new Intent(context, ExoPlayerActivity.class);
                         intent.putExtra("Link", link);
                         intent.putExtra("Link_Sub", sub);
@@ -168,10 +161,8 @@ public class Banner_Adapter extends PagerAdapter {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-
                     }
                 });
-
             }
         });
         return view;
@@ -184,7 +175,6 @@ public class Banner_Adapter extends PagerAdapter {
                 child(id).
                 child("soluotXem").
                 setValue(clicked);
-
     }
 
     @Override
@@ -211,32 +201,25 @@ public class Banner_Adapter extends PagerAdapter {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-
                     }
                 });
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
             }
 
             @Override
             public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }
-
-
 }

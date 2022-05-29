@@ -61,27 +61,27 @@ public class Expandablelist_Adapter extends BaseExpandableListAdapter {
 
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-        String headerTitle = (String)getGroup(groupPosition);
-        if(convertView == null){
-            LayoutInflater inflater = (LayoutInflater)this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.list_group,null);
+        String headerTitle = (String) getGroup(groupPosition);
+        if (convertView == null) {
+            LayoutInflater inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.list_group, null);
 
         }
-        
-        TextView lblListHeader = (TextView)convertView.findViewById(R.id.lblListHeader);
-        lblListHeader.setTypeface(null,Typeface.BOLD);
+
+        TextView lblListHeader = (TextView) convertView.findViewById(R.id.lblListHeader);
+        lblListHeader.setTypeface(null, Typeface.BOLD);
         lblListHeader.setText(headerTitle);
         return convertView;
     }
 
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-        final String childText = (String)getChild(groupPosition,childPosition);
-        if(convertView== null){
-            LayoutInflater inflater = (LayoutInflater)this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.list_item,null);
+        final String childText = (String) getChild(groupPosition, childPosition);
+        if (convertView == null) {
+            LayoutInflater inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.list_item, null);
         }
-            TextView tvListChild = (TextView)convertView.findViewById(R.id.lblListItem);
+        TextView tvListChild = (TextView) convertView.findViewById(R.id.lblListItem);
         tvListChild.setText(childText);
         return convertView;
     }

@@ -3,7 +3,6 @@ package com.example.historyvideo.activities;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -63,7 +62,7 @@ public class Watch_Later_Activity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 arrayList.clear();
-                if(dataSnapshot.exists() && dataSnapshot != null){
+                if (dataSnapshot.exists() && dataSnapshot != null) {
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         final String idP = ds.getKey();
                         mDataPhim.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -82,7 +81,6 @@ public class Watch_Later_Activity extends AppCompatActivity {
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError databaseError) {
-
                             }
                         });
                     }
@@ -91,7 +89,6 @@ public class Watch_Later_Activity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }

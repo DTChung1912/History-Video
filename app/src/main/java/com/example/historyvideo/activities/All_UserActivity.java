@@ -3,7 +3,9 @@ package com.example.historyvideo.activities;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
+
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -41,8 +43,8 @@ public class All_UserActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Window window = this.getWindow();
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.gray_dark));
-        searchUser = (SearchView)findViewById(R.id.searchUser);
-        userRecycler = (ListView) findViewById(R.id.recyclerUser);
+        searchUser = findViewById(R.id.searchUser);
+        userRecycler = findViewById(R.id.recyclerUser);
 
         usersList = new ArrayList<>();
         adapter = new Adapter_All_User(All_UserActivity.this, R.layout.recycler_user_item, usersList);
@@ -70,7 +72,7 @@ public class All_UserActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(All_UserActivity.this, UserInformationActivity.class);
                 Users users = usersList.get(i);
-                for(int a = 0; a< usersList.size(); a++){
+                for (int a = 0; a < usersList.size(); a++) {
                     intent.putExtra("dulieu", users);
                 }
                 startActivity(intent);
@@ -84,12 +86,12 @@ public class All_UserActivity extends AppCompatActivity {
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists() && dataSnapshot!= null){
+                if (dataSnapshot.exists() && dataSnapshot != null) {
                     usersList.clear();
-                    for(DataSnapshot ds: dataSnapshot.getChildren()){
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         Users users = ds.getValue(Users.class);
                         String email_lowercase = users.Email.toLowerCase();
-                        if(email_lowercase.contains(email)){
+                        if (email_lowercase.contains(email)) {
                             usersList.add(users);
                         }
                     }
@@ -101,13 +103,10 @@ public class All_UserActivity extends AppCompatActivity {
                     });
                     adapter.notifyDataSetChanged();
                 }
-
-
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         };
         query.addValueEventListener(valueEventListener);
@@ -118,7 +117,7 @@ public class All_UserActivity extends AppCompatActivity {
         mData1.orderByChild("HoTen").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists() && dataSnapshot != null){
+                if (dataSnapshot.exists() && dataSnapshot != null) {
                     usersList.clear();
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         Users users = ds.getValue(Users.class);
@@ -130,18 +129,16 @@ public class All_UserActivity extends AppCompatActivity {
                             }
                         });
                     }
-
                     adapter.notifyDataSetChanged();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
-
     }
+
     public void clickBackToAdmin1(View view) {
         finish();
     }

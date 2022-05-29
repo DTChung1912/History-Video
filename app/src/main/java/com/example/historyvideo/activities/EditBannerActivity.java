@@ -3,7 +3,6 @@ package com.example.historyvideo.activities;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -13,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.historyvideo.R;
@@ -82,7 +82,6 @@ public class EditBannerActivity extends AppCompatActivity {
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError databaseError) {
-
                         }
                     });
                 }
@@ -90,10 +89,8 @@ public class EditBannerActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
-
 
         mDataPhim = FirebaseDatabase.getInstance().getReference("Phim");
         mDataPhim.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -110,10 +107,8 @@ public class EditBannerActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
-
 
         spTenPhim.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -123,7 +118,6 @@ public class EditBannerActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
 
@@ -152,7 +146,7 @@ public class EditBannerActivity extends AppCompatActivity {
                     String linkAnh = edtLinkPoster.getText().toString().trim().toLowerCase();
                     String key = ds.getKey();
                     DatabaseReference mDataBannerRef = FirebaseDatabase.getInstance().getReference("QuangCao").child(key);
-                   
+
                     mDataBannerRef.child("idPhim").setValue(idp);
                     mDataBannerRef.child("linkAnh").setValue(linkAnh);
                     Toast.makeText(EditBannerActivity.this, "Cập nhật thành công", Toast.LENGTH_SHORT).show();
@@ -163,7 +157,6 @@ public class EditBannerActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }

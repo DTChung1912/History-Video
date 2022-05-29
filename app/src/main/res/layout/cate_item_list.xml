@@ -4,20 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
+
     <ImageButton
-        android:layout_marginLeft="5dp"
         android:id="@+id/imgLogo"
-        android:background="@drawable/elip_button_with_opacity_purple"
-        android:src="@drawable/ic_cartoon"
         android:layout_width="40dp"
-        android:layout_height="40dp" />
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/elip_button_with_opacity_purple"
+        android:src="@drawable/ic_cartoon" />
+
     <TextView
-        android:textColor="@color/gray_dark"
+        android:id="@+id/tvCateName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="2dp"
-        android:textSize="20sp"
-        android:id="@+id/tvCateName"
         android:text="Hành Động"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:textColor="@color/gray_dark"
+        android:textSize="20sp" />
 </LinearLayout>

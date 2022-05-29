@@ -5,8 +5,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -20,6 +18,7 @@ import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -67,9 +66,7 @@ public class BannerManagerActivity extends AppCompatActivity {
         adapter = new Adapter_QC(BannerManagerActivity.this, R.layout.banner_list_item, arrayList);
         listBanner.setAdapter(adapter);
 
-
         reloadQC();
-
 
         searchBanner.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -87,14 +84,12 @@ public class BannerManagerActivity extends AppCompatActivity {
             }
         });
 
-
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialogAddBanner();
             }
         });
-
 
         listBanner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -114,11 +109,9 @@ public class BannerManagerActivity extends AppCompatActivity {
                 lp.gravity = Gravity.CENTER;
                 dialogHoi.getWindow().setAttributes(lp);
 
-
                 Button btnHuy = (Button) dialogHoi.findViewById(R.id.btnHuy);
                 Button btnSua = (Button) dialogHoi.findViewById(R.id.btnSua);
                 Button btnSubmit = (Button) dialogHoi.findViewById(R.id.btnSubmit);
-
 
                 btnSua.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -130,7 +123,6 @@ public class BannerManagerActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-
 
                 btnHuy.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -148,7 +140,6 @@ public class BannerManagerActivity extends AppCompatActivity {
                         builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-
                             }
                         });
 
@@ -175,7 +166,6 @@ public class BannerManagerActivity extends AppCompatActivity {
 
                                     @Override
                                     public void onCancelled(@NonNull DatabaseError databaseError) {
-
                                     }
                                 });
                             }
@@ -214,9 +204,7 @@ public class BannerManagerActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
-
         });
     }
 
@@ -240,7 +228,6 @@ public class BannerManagerActivity extends AppCompatActivity {
         final ArrayAdapter<String> adapter;
         final DatabaseReference mDataQC;
 
-
         arrayList = new ArrayList<>();
         adapter = new ArrayAdapter(dialog.getContext(), android.R.layout.simple_spinner_item, arrayList);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -261,10 +248,8 @@ public class BannerManagerActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
-
 
         sptenPhim.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -283,7 +268,6 @@ public class BannerManagerActivity extends AppCompatActivity {
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError databaseError) {
-
                         }
                     });
                 }
@@ -291,10 +275,8 @@ public class BannerManagerActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
-
 
         btnThem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -314,7 +296,6 @@ public class BannerManagerActivity extends AppCompatActivity {
                         }
                     }
                 });
-
             }
         });
 
@@ -326,10 +307,8 @@ public class BannerManagerActivity extends AppCompatActivity {
             }
         });
 
-
         dialog.show();
     }
-
 
     private void searchBanner(final String q) {
         mData = FirebaseDatabase.getInstance().getReference("QuangCao");
@@ -337,19 +316,19 @@ public class BannerManagerActivity extends AppCompatActivity {
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()){
+                if (dataSnapshot.exists()) {
                     arrayList.clear();
-                    for(DataSnapshot ds:dataSnapshot.getChildren()){
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         final QuangCao qc = ds.getValue(QuangCao.class);
                         String idPhim = qc.getIdPhim();
                         final DatabaseReference dataPhim = FirebaseDatabase.getInstance().getReference("Phim");
                         dataPhim.child(idPhim).addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                if(dataSnapshot.exists()){
+                                if (dataSnapshot.exists()) {
                                     Phim phim = dataSnapshot.getValue(Phim.class);
                                     String tenphim = phim.getTenPhim().toLowerCase();
-                                    if(tenphim.contains(q)){
+                                    if (tenphim.contains(q)) {
                                         arrayList.add(qc);
                                     }
                                 }
@@ -358,7 +337,6 @@ public class BannerManagerActivity extends AppCompatActivity {
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError databaseError) {
-
                             }
                         });
                     }
@@ -375,7 +353,6 @@ public class BannerManagerActivity extends AppCompatActivity {
         query.addValueEventListener(valueEventListener);
     }
 
-
     private void InitUI() {
         listBanner = (ListView) findViewById(R.id.lvBanner);
         btnAdd = (FloatingActionButton) findViewById(R.id.btnAddBanner);
@@ -385,5 +362,4 @@ public class BannerManagerActivity extends AppCompatActivity {
     public void clickBackToAdmin1(View view) {
         finish();
     }
-
 }

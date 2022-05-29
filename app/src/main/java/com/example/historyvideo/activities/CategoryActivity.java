@@ -28,25 +28,26 @@ public class CategoryActivity extends AppCompatActivity {
 
     ArrayList<TheLoai> arrayList;
     Adapter_Category adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Window w = this.getWindow();
-        w.setStatusBarColor(ContextCompat.getColor(this,R.color.gray_dark));
-        
+        w.setStatusBarColor(ContextCompat.getColor(this, R.color.gray_dark));
+
         initUI();
         arrayList = new ArrayList<>();
-        adapter = new Adapter_Category(CategoryActivity.this,R.layout.cate_item_list,arrayList);
+        adapter = new Adapter_Category(CategoryActivity.this, R.layout.cate_item_list, arrayList);
         lvCate.setAdapter(adapter);
 
         mData = FirebaseDatabase.getInstance().getReference("TheLoai");
         mData.orderByChild("TenTheLoai").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()){
-                    for(DataSnapshot ds:dataSnapshot.getChildren()){
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         TheLoai theLoai = ds.getValue(TheLoai.class);
                         arrayList.add(theLoai);
                     }
@@ -62,7 +63,7 @@ public class CategoryActivity extends AppCompatActivity {
     }
 
     private void initUI() {
-        lvCate = (ListView)findViewById(R.id.lvCategory);
+        lvCate = (ListView) findViewById(R.id.lvCategory);
         //btnAdd = (FloatingActionButton)findViewById(R.id.btnAddCate);
     }
 

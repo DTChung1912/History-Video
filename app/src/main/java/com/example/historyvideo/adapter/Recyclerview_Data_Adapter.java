@@ -14,7 +14,7 @@ import com.example.historyvideo.model.SectionDataPhim;
 
 import java.util.ArrayList;
 
-public class Recyclerview_Data_Adapter extends RecyclerView.Adapter<Recyclerview_Data_Adapter.ItemRowHolder>{
+public class Recyclerview_Data_Adapter extends RecyclerView.Adapter<Recyclerview_Data_Adapter.ItemRowHolder> {
     private ArrayList<SectionDataPhim> dataList;
     private Context mContext;
 
@@ -25,7 +25,7 @@ public class Recyclerview_Data_Adapter extends RecyclerView.Adapter<Recyclerview
 
     @Override
     public ItemRowHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.horizontal_recycler_item, null,false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.horizontal_recycler_item, null, false);
 
         RecyclerView.LayoutParams lp = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         v.setLayoutParams(lp);
@@ -48,12 +48,9 @@ public class Recyclerview_Data_Adapter extends RecyclerView.Adapter<Recyclerview
         itemRowHolder.recycler_view_list.setAdapter(itemListDataAdapter);
         itemRowHolder.recycler_view_list.setNestedScrollingEnabled(false);
 
-        if(i > 0){
+        if (i > 0) {
             itemRowHolder.itemTitle.setTextColor(mContext.getResources().getColor(R.color.sectionHeader));
         }
-
-
-
     }
 
     @Override
@@ -66,14 +63,10 @@ public class Recyclerview_Data_Adapter extends RecyclerView.Adapter<Recyclerview
         private TextView itemTitle;
         private RecyclerView recycler_view_list;
 
-
         private ItemRowHolder(View view) {
             super(view);
             this.itemTitle = (TextView) view.findViewById(R.id.itemTitle);
             this.recycler_view_list = (RecyclerView) view.findViewById(R.id.recycler_view_list);
-
         }
-
     }
-
 }

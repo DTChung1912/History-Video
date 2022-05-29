@@ -3,12 +3,14 @@ package com.example.historyvideo.adapter;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.example.historyvideo.R;
 import com.example.historyvideo.model.FeedBack;
@@ -19,11 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Adapter_Feedback extends ArrayAdapter<FeedBack> {
@@ -64,8 +63,8 @@ public class Adapter_Feedback extends ArrayAdapter<FeedBack> {
         String status = feedBack.Status;
         String sent = "Sent";
 
-        holder.tvEmailFB.setText("<"+email+">");
-        holder.contentFB.setText("Message: "+content);
+        holder.tvEmailFB.setText("<" + email + ">");
+        holder.contentFB.setText("Message: " + content);
         holder.timestampFB.setText(at);
 
         if (status != null && status.equals(sent)) {
@@ -76,7 +75,7 @@ public class Adapter_Feedback extends ArrayAdapter<FeedBack> {
             holder.tvEmailFB.setTextColor(getContext().getResources().getColor(R.color.sectionHeader));
             holder.contentFB.setTextColor(getContext().getResources().getColor(R.color.sectionHeader));
             holder.timestampFB.setTextColor(getContext().getResources().getColor(R.color.sectionHeader));
-        }else if(status != null && status.equals("Seen")){
+        } else if (status != null && status.equals("Seen")) {
             holder.tvEmailFB.setTypeface(Typeface.DEFAULT);
             holder.contentFB.setTypeface(Typeface.DEFAULT);
             holder.timestampFB.setTypeface(Typeface.DEFAULT);
@@ -88,7 +87,7 @@ public class Adapter_Feedback extends ArrayAdapter<FeedBack> {
         mData.child("Users").orderByChild("Email").equalTo(email).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@androidx.annotation.NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot ds:dataSnapshot.getChildren()){
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     String img = ds.child("Image").getValue().toString();
                     Picasso.get()
                             .load(Uri.parse(img))
@@ -98,7 +97,6 @@ public class Adapter_Feedback extends ArrayAdapter<FeedBack> {
 
             @Override
             public void onCancelled(@androidx.annotation.NonNull DatabaseError databaseError) {
-
             }
         });
 

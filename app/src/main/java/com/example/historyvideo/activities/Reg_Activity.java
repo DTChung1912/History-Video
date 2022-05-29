@@ -4,13 +4,13 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -32,6 +32,7 @@ public class Reg_Activity extends AppCompatActivity {
     public FirebaseAuth mAuth;
     DatabaseReference mData;
     private ProgressDialog pd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,12 +52,11 @@ public class Reg_Activity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if (mAuth.getCurrentUser() != null) {
-
         }
     }
 
     private void DangKy() {
-         pd = new ProgressDialog(Reg_Activity.this);
+        pd = new ProgressDialog(Reg_Activity.this);
         pd.setTitle("Đang Xử Lý Dữ Liệu");
         pd.setMessage("Vui Lòng Chờ Trong Giây Lát...");
         pd.setCanceledOnTouchOutside(false);
@@ -64,7 +64,7 @@ public class Reg_Activity extends AppCompatActivity {
         String eMail = edtEmail.getText().toString().trim();
         String matKhau = edtMatKhau.getText().toString().trim();
 
-        if(!eMail.equals("") && !matKhau.equals("")){
+        if (!eMail.equals("") && !matKhau.equals("")) {
             pd.show();
             mAuth.createUserWithEmailAndPassword(eMail, matKhau).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
@@ -75,15 +75,15 @@ public class Reg_Activity extends AppCompatActivity {
                         String hoTen = edtHoTen.getText().toString().trim();
                         String eMail = edtEmail.getText().toString().trim();
                         String SDT = edtSDT.getText().toString().trim();
-                        if(!hoTen.equals("")&& !eMail.equals("")&& !SDT.equals("")){
-                            innerReg(hoTen,eMail,SDT);
+                        if (!hoTen.equals("") && !eMail.equals("") && !SDT.equals("")) {
+                            innerReg(hoTen, eMail, SDT);
                             pd.dismiss();
-                        }else{
+                        } else {
                             Toast.makeText(Reg_Activity.this, "Vui lòng điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         pd.dismiss();
-                        switch (task.getException().toString()){
+                        switch (task.getException().toString()) {
                             case "com.google.firebase.auth.FirebaseAuthInvalidCredentialsException: The email address is badly formatted.":
                                 Toast.makeText(Reg_Activity.this, "Email không hợp lệ, vui lòng thử lại", Toast.LENGTH_SHORT).show();
                                 break;
@@ -97,10 +97,9 @@ public class Reg_Activity extends AppCompatActivity {
                     }
                 }
             });
-        }else{
+        } else {
             Toast.makeText(this, "Vui lòng điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
         }
-
     }
 
     public void clickBackToStart(View view) {
@@ -108,8 +107,8 @@ public class Reg_Activity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public  void innerReg(String hovaten, String mail, String sdt){
-        Users users = new Users(hovaten, mail, sdt, "Default_Image","Default","Not Actived");
+    public void innerReg(String hovaten, String mail, String sdt) {
+        Users users = new Users(hovaten, mail, sdt, "Default_Image", "Default", "Not Actived");
         FirebaseDatabase.getInstance()
                 .getReference("Users")
                 .child(FirebaseAuth.getInstance()
@@ -158,7 +157,6 @@ public class Reg_Activity extends AppCompatActivity {
 
         int hour = cal.get(Calendar.HOUR_OF_DAY);
         int minute = cal.get(Calendar.MINUTE);
-
 
         if (mAuth.getCurrentUser() != null) {
             mData.child(userID).child("Status").setValue("Offline");

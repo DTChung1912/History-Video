@@ -6,23 +6,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.example.historyvideo.R;
 import com.example.historyvideo.model.TheLoai;
 
 import java.util.List;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import de.hdodenhof.circleimageview.CircleImageView;
-
 public class Adapter_Category extends ArrayAdapter<TheLoai> {
     public List<TheLoai> theLoaiList;
     public Context context;
     public LayoutInflater inflater;
-
 
     public Adapter_Category(@NonNull Context context, int resource, @NonNull List<TheLoai> objects) {
         super(context, resource, objects);
@@ -34,23 +31,23 @@ public class Adapter_Category extends ArrayAdapter<TheLoai> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         ViewHolder holder;
-        if(convertView == null){
+        if (convertView == null) {
             holder = new ViewHolder();
-            convertView = inflater.inflate(R.layout.cate_item_list,parent,false);
+            convertView = inflater.inflate(R.layout.cate_item_list, parent, false);
 
             holder.imgCateLogo = convertView.findViewById(R.id.imgLogo);
             holder.tvCateName = convertView.findViewById(R.id.tvCateName);
 
             convertView.setTag(holder);
-        }else{
-            holder = (ViewHolder)convertView.getTag();
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
 
-        for(int i =0; i<theLoaiList.size(); i++){
+        for (int i = 0; i < theLoaiList.size(); i++) {
             String tenTL = theLoaiList.get(position).TenTheLoai;
             holder.tvCateName.setText(tenTL);
-            if(tenTL!= null){
-                switch (tenTL){
+            if (tenTL != null) {
+                switch (tenTL) {
                     case "Hành Động":
                         holder.imgCateLogo.setImageDrawable(getContext().getDrawable(R.drawable.ic_action));
                         holder.imgCateLogo.setBackground(getContext().getDrawable(R.drawable.elip_button_with_opacity_action));
@@ -99,11 +96,10 @@ public class Adapter_Category extends ArrayAdapter<TheLoai> {
             }
         }
 
-
         return convertView;
     }
 
-    public static class ViewHolder{
+    public static class ViewHolder {
         ImageButton imgCateLogo;
         TextView tvCateName;
     }

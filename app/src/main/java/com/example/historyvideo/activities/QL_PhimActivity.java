@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -16,6 +15,7 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -63,7 +63,6 @@ public class QL_PhimActivity extends AppCompatActivity {
         gvPhim.setAdapter(adapter);
         fillDataAll();
 
-
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,7 +70,6 @@ public class QL_PhimActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -110,7 +108,6 @@ public class QL_PhimActivity extends AppCompatActivity {
                     }
                     adapter.notifyDataSetChanged();
 
-
                     gvPhim.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -119,12 +116,10 @@ public class QL_PhimActivity extends AppCompatActivity {
                         }
                     });
                 }
-
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         };
         query.addValueEventListener(valueEventListener);
@@ -143,12 +138,11 @@ public class QL_PhimActivity extends AppCompatActivity {
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         Phim phim = snapshot.getValue(Phim.class);
                         String tenthuong = phim.getTenPhim().toLowerCase();
-                        if(tenthuong.contains(q)){
+                        if (tenthuong.contains(q)) {
                             arrayList.add(phim);
                         }
                     }
                     adapter.notifyDataSetChanged();
-
 
                     gvPhim.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
                         @Override
@@ -163,7 +157,6 @@ public class QL_PhimActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         };
         query.addValueEventListener(valueEventListener);
@@ -182,7 +175,6 @@ public class QL_PhimActivity extends AppCompatActivity {
         lp.gravity = Gravity.CENTER;
         dialogHoi.getWindow().setAttributes(lp);
 
-
         Button btnHuy = (Button) dialogHoi.findViewById(R.id.btnHuy);
         Button btnSubmit = (Button) dialogHoi.findViewById(R.id.btnSubmit);
         Button btnEdit = (Button) dialogHoi.findViewById(R.id.btnSua);
@@ -194,7 +186,6 @@ public class QL_PhimActivity extends AppCompatActivity {
             }
         });
 
-
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -203,7 +194,6 @@ public class QL_PhimActivity extends AppCompatActivity {
                 startActivity(manhinhDetail);
             }
         });
-
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -217,7 +207,6 @@ public class QL_PhimActivity extends AppCompatActivity {
                 builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
                     }
                 });
 
@@ -236,7 +225,7 @@ public class QL_PhimActivity extends AppCompatActivity {
                         });
                     }
                 });
-                final AlertDialog alertDialog =  builder.create();
+                final AlertDialog alertDialog = builder.create();
                 alertDialog.show();
 
                 dialogHoi.setOnDismissListener(new DialogInterface.OnDismissListener() {

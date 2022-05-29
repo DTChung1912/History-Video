@@ -6,143 +6,158 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".activities.ManagerAddPhim_Activity">
+
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageView
-            android:onClick="clickBackToMain"
-            android:src="@drawable/ic_arrow_back_black_24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="clickBackToMain"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
     </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilTenphim"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <EditText
                         android:id="@+id/edtTen"
-                        android:hint="Tên Phim"
                         android:layout_width="match_parent"
-                        android:inputType="textMultiLine"
+                        android:layout_height="wrap_content"
+                        android:hint="Tên Phim"
                         android:imeOptions="actionNext"
-                        android:layout_height="wrap_content" />
+                        android:inputType="textMultiLine" />
                 </com.google.android.material.textfield.TextInputLayout>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilLinkPhim"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <EditText
                         android:id="@+id/edtLink"
-                        android:hint="Link Phim"
-                        android:inputType="textMultiLine"
-                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:hint="Link Phim"
+                        android:imeOptions="actionNext"
+                        android:inputType="textMultiLine" />
                 </com.google.android.material.textfield.TextInputLayout>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilLinkSub"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <EditText
                         android:id="@+id/edtLinkSub"
-                        android:hint="Link Phụ Đề"
-                        android:inputType="textMultiLine"
-                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:hint="Link Phụ Đề"
+                        android:imeOptions="actionNext"
+                        android:inputType="textMultiLine" />
                 </com.google.android.material.textfield.TextInputLayout>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilPoster"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <EditText
                         android:id="@+id/edtPoster"
-                        android:hint="Link Poster"
-                        android:inputType="textMultiLine"
-                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:hint="Link Poster"
+                        android:imeOptions="actionNext"
+                        android:inputType="textMultiLine" />
                 </com.google.android.material.textfield.TextInputLayout>
+
                 <TextView
-                    android:layout_marginLeft="4dp"
-                    android:textSize="18sp"
-                    android:text="Thể Loại:"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="Thể Loại:"
+                    android:textSize="18sp" />
+
                 <Spinner
                     android:id="@+id/spTheLoai"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></Spinner>
+                    android:layout_height="wrap_content" />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilMota"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <EditText
-                        android:isScrollContainer="true"
                         android:id="@+id/edtMota"
-                        android:hint="Mô Tả"
-                        android:inputType="textMultiLine"
-                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:hint="Mô Tả"
+                        android:imeOptions="actionNext"
+                        android:inputType="textMultiLine"
+                        android:isScrollContainer="true" />
                 </com.google.android.material.textfield.TextInputLayout>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilDienVien"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <EditText
                         android:id="@+id/edtDienVien"
-                        android:hint="Diễn Viên"
-                        android:inputType="textMultiLine"
-                        android:imeOptions="actionDone"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:hint="Diễn Viên"
+                        android:imeOptions="actionDone"
+                        android:inputType="textMultiLine" />
                 </com.google.android.material.textfield.TextInputLayout>
-
             </LinearLayout>
-
 
             <LinearLayout
-
-                android:gravity="center"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
                 <Button
-                    android:onClick="clickUp"
-                    android:textColor="#FFFFFF"
-                    android:background="@drawable/button"
                     android:id="@+id/btnLuu"
-                    android:layout_marginRight="50dp"
-                    android:textAllCaps="false"
-                    android:text="Lưu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <Button
-                    android:onClick="clickClear"
-                    android:textColor="#FFFFFF"
-                    android:background="@drawable/button"
-                    android:id="@+id/btnHuy"
-                    android:layout_marginLeft="50dp"
-                    android:textAllCaps="false"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hủy" />
-            </LinearLayout>
+                    android:layout_marginRight="50dp"
+                    android:background="@drawable/button"
+                    android:onClick="clickUp"
+                    android:text="Lưu"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF" />
 
+                <Button
+                    android:id="@+id/btnHuy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:background="@drawable/button"
+                    android:onClick="clickClear"
+                    android:text="Hủy"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -3,18 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-        <ImageView
-            android:foreground="@drawable/custom_background_banner"
-            android:id="@+id/imgBackGroundBanner"
-            android:layout_width="match_parent"
-            android:layout_height="505dp"
-            android:scaleType="fitXY" />
-
-
+    <ImageView
+        android:id="@+id/imgBackGroundBanner"
+        android:layout_width="match_parent"
+        android:layout_height="505dp"
+        android:foreground="@drawable/custom_background_banner"
+        android:scaleType="fitXY" />
 
     <LinearLayout
-        android:elevation="10dp"
         android:id="@+id/linearLayout1"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
@@ -23,6 +19,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginBottom="130dp"
         android:background="@drawable/red_background"
+        android:elevation="10dp"
         android:orientation="horizontal">
 
         <ImageView

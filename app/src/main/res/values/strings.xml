@@ -4,7 +4,12 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="facebook_app_id">2855126201179563</string>
-    <string name="fb_login_protocol_scheme">fb2855126201179563</string>
+    <string name="facebook_app_id">526534602448381</string>
+    <string name="fb_login_protocol_scheme">fb526534602448381</string>
     <string name="app_link">https://drive.google.com/file/d/10_UmBokjnEQDPFTvcQPzqDnwUaq5QIGH/view?usp=sharing</string>
+
+
+    <string name="facebook_client_token">8093c1701c048d952655de2cb316ddd1</string>
+
+
 </resources>

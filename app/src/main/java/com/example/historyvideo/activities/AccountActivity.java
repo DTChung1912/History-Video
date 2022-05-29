@@ -80,7 +80,7 @@ public class AccountActivity extends AppCompatActivity {
     CircleImageView profileImage;
     EditText edtDisplayName, edtDisplayEmail, edtPhone, edtPassword;
     TextInputLayout tilPhone, tilPassword;
-    TextView tvPhoto,tvTitle;
+    TextView tvPhoto, tvTitle;
     ImageButton btnChangePass;
     Button btnSave;
 
@@ -110,15 +110,9 @@ public class AccountActivity extends AppCompatActivity {
         mData = FirebaseDatabase.getInstance().getReference("Users");
         initUI();
 
-
-        Log.d("PROVIDERRRR", "" + provider);
-
         if (provider.equals("facebook.com")) {
-
             fillInfoFacebook();
-        }
-        else if(provider.equals("password")) {
-
+        } else if (provider.equals("password")) {
             fillInfo();
         }
     }
@@ -208,13 +202,13 @@ public class AccountActivity extends AppCompatActivity {
 
     }
 
-    private void fillInfoFacebook(){
+    private void fillInfoFacebook() {
         tvTitle.setText("Bạn Đang Đăng Nhập Với Tài Khoản Facebook");
         tvTitle.setTextSize(15f);
         String displayName = user.getDisplayName();
-        String email =user.getEmail();
+        String email = user.getEmail();
         Uri image_url = user.getPhotoUrl();
-        String linkAnh = image_url+"?height=400";
+        String linkAnh = image_url + "?height=400";
         Uri profile_Image = Uri.parse(linkAnh);
 
         btnSave.setVisibility(View.GONE);
@@ -237,6 +231,7 @@ public class AccountActivity extends AppCompatActivity {
                 .placeholder(R.drawable.person)
                 .into(profileImage);
     }
+
     private void fillInfo() {
 
 
@@ -284,9 +279,9 @@ public class AccountActivity extends AppCompatActivity {
         tilPhone = (TextInputLayout) findViewById(R.id.tilPhone);
         tilPassword = (TextInputLayout) findViewById(R.id.tilPassword);
         tvPhoto = (TextView) findViewById(R.id.tveditPhoto);
-        tvTitle = (TextView)findViewById(R.id.tvTitle);
+        tvTitle = (TextView) findViewById(R.id.tvTitle);
         btnSave = (Button) findViewById(R.id.btnSave);
-        btnChangePass = (ImageButton)findViewById(R.id.btnChangePass);
+        btnChangePass = (ImageButton) findViewById(R.id.btnChangePass);
         edtPassword.setFocusable(false);
         edtPassword.setClickable(false);
         edtDisplayEmail.setFocusable(false);
@@ -318,17 +313,17 @@ public class AccountActivity extends AppCompatActivity {
         mData.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Map<String, Object> postValues = new HashMap<String,Object>();
+                Map<String, Object> postValues = new HashMap<String, Object>();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    postValues.put(snapshot.getKey(),snapshot.getValue());
+                    postValues.put(snapshot.getKey(), snapshot.getValue());
                 }
-                postValues.put("Email",eMail);
-                postValues.put("HoTen",hoten);
-                postValues.put("SDT",sdt);
+                postValues.put("Email", eMail);
+                postValues.put("HoTen", hoten);
+                postValues.put("SDT", sdt);
                 mData.child(uid).updateChildren(postValues).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Toast.makeText(AccountActivity.this, "Cập Nhật Thông Tin Thành Công", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -482,8 +477,11 @@ public class AccountActivity extends AppCompatActivity {
     }
 
     public void onTakePictureResult(boolean success) {
-        if (success) { startCameraWithUri(); }
-        else { showErrorMessage("taking picture failed"); }
+        if (success) {
+            startCameraWithUri();
+        } else {
+            showErrorMessage("taking picture failed");
+        }
     }
 
     @Override

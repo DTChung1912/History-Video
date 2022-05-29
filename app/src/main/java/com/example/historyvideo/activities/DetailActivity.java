@@ -14,7 +14,6 @@ import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
-import androidx.annotation.NonNull;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -24,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -104,7 +104,7 @@ public class DetailActivity extends AppCompatActivity {
         mDataLink.child("Link").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()&& dataSnapshot != null){
+                if (dataSnapshot.exists() && dataSnapshot != null) {
                     link = dataSnapshot.getValue(String.class);
                 }
             }
@@ -115,14 +115,13 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
 
-
         btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent shareIntent = new Intent(Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
-                shareIntent.putExtra(Intent.EXTRA_SUBJECT,"Morning Of Owl");
-                shareIntent.putExtra(Intent.EXTRA_TEXT,"Hãy tải ứng dụng tại link "+link+"\n để xem phim "+tp+" nhé !");
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Morning Of Owl");
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "Hãy tải ứng dụng tại link " + link + "\n để xem phim " + tp + " nhé !");
                 startActivity(Intent.createChooser(shareIntent, "Chia Sẻ"));
             }
         });
@@ -179,9 +178,9 @@ public class DetailActivity extends AppCompatActivity {
                 luotxem = views;
                 tvTenPhim.setText(ten);
                 tvTheLoai.setText(theloai);
-                if(theloai.equals("Hoạt Hình")){
+                if (theloai.equals("Hoạt Hình")) {
                     tvDienVien.setText("Lồng Tiếng: " + dienvien);
-                }else{
+                } else {
                     tvDienVien.setText("Diễn Viên: " + dienvien);
                 }
                 expandableTextView.setText(mota);
@@ -205,21 +204,16 @@ public class DetailActivity extends AppCompatActivity {
 
                     @Override
                     public void onBitmapFailed(Exception e, Drawable errorDrawable) {
-
                     }
-
 
                     @Override
                     public void onPrepareLoad(Drawable placeHolderDrawable) {
-
                     }
                 });
-
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }
@@ -240,10 +234,8 @@ public class DetailActivity extends AppCompatActivity {
         return result;
     }
 
-
-
     public void khoiTao() {
-        btnShare = (ImageButton)findViewById(R.id.btnShare);
+        btnShare = (ImageButton) findViewById(R.id.btnShare);
         btnAdd = (ImageButton) findViewById(R.id.btnAdd);
         imgPoster = (ImageView) findViewById(R.id.imgPoster);
         tvTenPhim = (TextView) findViewById(R.id.tvName);
@@ -269,7 +261,6 @@ public class DetailActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }
@@ -292,7 +283,6 @@ public class DetailActivity extends AppCompatActivity {
                     String dienvienPhim = snapshot.child("dienvienPhim").getValue().toString();
                     String luotxem = snapshot.child("soluotXem").getValue().toString();
 
-
                     if (!snapshot.child("idPhim").getValue().toString().equals(phimID)) {
                         Collections.sort(arrayList, new Comparator<Related_Phim>() {
                             @Override
@@ -304,13 +294,11 @@ public class DetailActivity extends AppCompatActivity {
                     }
                     adapter.notifyDataSetChanged();
 
-
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }
@@ -326,13 +314,11 @@ public class DetailActivity extends AppCompatActivity {
     }
 
 
-
-    public void ghiLog(){
+    public void ghiLog() {
         DatabaseReference dataLog = FirebaseDatabase.getInstance().getReference();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         String uid = user.getUid();
-
 
         Calendar cal = Calendar.getInstance();
         int year = cal.get(Calendar.YEAR);
@@ -342,20 +328,20 @@ public class DetailActivity extends AppCompatActivity {
         int hour = cal.get(Calendar.HOUR_OF_DAY);
         int minute = cal.get(Calendar.MINUTE);
 
-        String timeStamp = "Ngày "+day+" tháng "+month+" năm "+ year+ " lúc "+hour+"h:"+minute;
+        String timeStamp = "Ngày " + day + " tháng " + month + " năm " + year + " lúc " + hour + "h:" + minute;
         String movieWatched = tvTenPhim.getText().toString();
 //        dataLog.child("UserLog").child(uid).child("dateTime").setValue(timeStamp);
 //        dataLog.child("UserLog").child(uid).child("movieWatched").setValue(tvTenPhim.getText().toString());
-       String key= dataLog.child("UserLog").push().getKey();
-        User_Log user_log = new User_Log(timeStamp,movieWatched);
-       dataLog.child("UserLog").child(uid).child(key).setValue(user_log).addOnCompleteListener(new OnCompleteListener<Void>() {
-           @Override
-           public void onComplete(@NonNull Task<Void> task) {
-               if(task.isSuccessful()){
+        String key = dataLog.child("UserLog").push().getKey();
+        User_Log user_log = new User_Log(timeStamp, movieWatched);
+        dataLog.child("UserLog").child(uid).child(key).setValue(user_log).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
 
-               }
-           }
-       });
+                }
+            }
+        });
     }
 
 
@@ -366,15 +352,13 @@ public class DetailActivity extends AppCompatActivity {
         FirebaseDatabase.getInstance().getReference("Phim").
                 child(key).
                 child("soluotXem").
-                setValue(luotxem+1);
+                setValue(luotxem + 1);
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-
     }
-
 
     public void clickBackToSomeThing(View view) {
         super.onBackPressed();
@@ -389,7 +373,6 @@ public class DetailActivity extends AppCompatActivity {
 
         processWatchLater = true;
 
-
         mData.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -398,13 +381,13 @@ public class DetailActivity extends AppCompatActivity {
                         mData.child(idPhim).removeValue();
                         btnAdd.setImageDrawable(getDrawable(R.drawable.ic_baseline_playlist_add_24px));
                         btnAdd.setBackground(getDrawable(R.drawable.elip_button_with_opacity));
-                        Toast.makeText(context, "Đã xóa "+tenPhim+" ra khỏi danh sách xem sau", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Đã xóa " + tenPhim + " ra khỏi danh sách xem sau", Toast.LENGTH_SHORT).show();
                         processWatchLater = false;
                     } else {
                         mData.child(idPhim).setValue(idPhim);
                         btnAdd.setImageDrawable(getDrawable(R.drawable.ic_baseline_playlist_add_check_24px));
                         btnAdd.setBackground(getDrawable(R.drawable.elip_button_with_opacity_added));
-                        Toast.makeText(context, "Đã thêm "+tenPhim+" vào danh sách xem sau", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Đã thêm " + tenPhim + " vào danh sách xem sau", Toast.LENGTH_SHORT).show();
                         processWatchLater = false;
                     }
                 }
@@ -412,11 +395,8 @@ public class DetailActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
-
-
     }
 }
 

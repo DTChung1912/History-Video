@@ -3,13 +3,13 @@ package com.example.historyvideo.activities;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.historyvideo.R;
@@ -21,6 +21,7 @@ public class ForgotPassword_Activity extends AppCompatActivity {
     EditText edtForgot;
     ProgressBar pgBar;
     FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +40,9 @@ public class ForgotPassword_Activity extends AppCompatActivity {
 
     public void clickReset(View view) {
         pgBar.setVisibility(View.VISIBLE);
-        if(!edtForgot.getText().toString().equals("")){
+        if (!edtForgot.getText().toString().equals("")) {
             reset();
-        }else{
+        } else {
             Toast.makeText(this, "Email không được để trống", Toast.LENGTH_SHORT).show();
             edtForgot.requestFocus();
             pgBar.setVisibility(View.GONE);

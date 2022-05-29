@@ -4,8 +4,6 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +15,8 @@ import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.historyvideo.R;
@@ -62,7 +62,7 @@ public class More_Fragment extends Fragment {
         listView.setAdapter(adapter);
         listView.expandGroup(0);
         listView.expandGroup(2);
-        final Intent intent = new Intent(getActivity(),DetailBaseByCategoryActivity.class);
+        final Intent intent = new Intent(getActivity(), DetailBaseByCategoryActivity.class);
         listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
@@ -87,7 +87,7 @@ public class More_Fragment extends Fragment {
                         }
                         break;
                     case 1:
-                        switch (childPosition){
+                        switch (childPosition) {
                             case 0:
                                 truyenIntent(childPosition);
                                 intent.putExtra("tenTL", tentl);
@@ -145,7 +145,6 @@ public class More_Fragment extends Fragment {
                                 break;
                         }
                         break;
-
                     case 2:
                         switch (childPosition) {
                             case 0:
@@ -159,9 +158,11 @@ public class More_Fragment extends Fragment {
         });
         return view;
     }
-    private void truyenIntent(int cp){
+
+    private void truyenIntent(int cp) {
         tentl = listHash.get(listHeader.get(1)).get(cp);
     }
+
     private void checkOffline() {
         DatabaseReference mDataUser = FirebaseDatabase.getInstance().getReference("Users");
         String userID = mAuth.getCurrentUser().getUid();
@@ -172,7 +173,6 @@ public class More_Fragment extends Fragment {
 
         int hour = cal.get(Calendar.HOUR_OF_DAY);
         int minute = cal.get(Calendar.MINUTE);
-
 
         if (mAuth.getCurrentUser() != null) {
             mDataUser.child(userID).child("Status").setValue("Offline");
@@ -198,10 +198,8 @@ public class More_Fragment extends Fragment {
         lp.gravity = Gravity.CENTER;
         dialog.getWindow().setAttributes(lp);
 
-
         Button btnHuy = (Button) dialog.findViewById(R.id.btnHuy);
         Button btnSubmit = (Button) dialog.findViewById(R.id.btnSubmit);
-
 
         btnHuy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -219,7 +217,7 @@ public class More_Fragment extends Fragment {
                 String feedbackContent = edtContent.getText().toString();
                 if (feedbackContent.equals("")) {
                     Toast.makeText(getContext(), "Nội dung feedback không được để trống", Toast.LENGTH_SHORT).show();
-                } else{
+                } else {
                     submitFeedback(feedbackContent);
                     edtContent.setText("");
                     Toast.makeText(getContext(), "Cảm ơn bạn đã đóng góp ý kiến", Toast.LENGTH_SHORT).show();
@@ -243,7 +241,6 @@ public class More_Fragment extends Fragment {
         int day_of_month = cal.get(Calendar.DAY_OF_MONTH);
         int hour = cal.get(Calendar.HOUR_OF_DAY);
         int minute = cal.get(Calendar.MINUTE);
-
 
         String pushKey = mData.child("FeedBack").push().getKey();
         mDataFeedBack = mData.child("FeedBack").child(pushKey);
@@ -279,9 +276,9 @@ public class More_Fragment extends Fragment {
         mData.orderByChild("TenTheLoai").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()){
+                if (dataSnapshot.exists()) {
                     theloaiPhim.clear();
-                    for(DataSnapshot snapshot:dataSnapshot.getChildren()){
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         String tl = snapshot.child("TenTheLoai").getValue().toString();
                         theloaiPhim.add(tl);
                     }
@@ -293,7 +290,6 @@ public class More_Fragment extends Fragment {
 
             }
         });
-
 
         List<String> hotro = new ArrayList<>();
         hotro.add("Feedback");

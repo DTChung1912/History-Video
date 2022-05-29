@@ -37,7 +37,6 @@ import java.util.List;
 import me.relex.circleindicator.CircleIndicator;
 
 public class Home_Fragment extends Fragment {
-
     DatabaseReference mData;
     DatabaseReference mDataCate;
     View view;
@@ -50,8 +49,6 @@ public class Home_Fragment extends Fragment {
     Handler handler;
     ArrayList<String> listTheLoai;
     ArrayList<SectionDataPhim> allSampleData;
-
-
     int currentItem;
 
     @Nullable
@@ -116,11 +113,9 @@ public class Home_Fragment extends Fragment {
         myRecyclerView.setNestedScrollingEnabled(false);
         myRecyclerView.setAdapter(adapter1);
 
-
         final SectionDataPhim dm = new SectionDataPhim();
 
         dm.setHeaderTitle(theloai);
-
 
         final DatabaseReference mDataPhim;
         mDataPhim = FirebaseDatabase.getInstance().getReference("Phim");
@@ -150,10 +145,8 @@ public class Home_Fragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
-
     }
 
 
@@ -176,7 +169,6 @@ public class Home_Fragment extends Fragment {
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError databaseError) {
-
                             }
                         });
                     }
@@ -185,7 +177,6 @@ public class Home_Fragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
 
@@ -200,11 +191,9 @@ public class Home_Fragment extends Fragment {
                     currentItem = 0;
                 }
                 viewPager.setCurrentItem(currentItem, true);
-                handler.postDelayed(runnable, 4500);
+                handler.postDelayed(runnable, 1000);
             }
         };
-        handler.postDelayed(runnable, 4500);
+        handler.postDelayed(runnable, 1000);
     }
-
-
 }

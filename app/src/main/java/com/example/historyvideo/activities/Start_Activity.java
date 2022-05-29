@@ -16,6 +16,7 @@ import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -24,8 +25,11 @@ import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
@@ -41,8 +45,11 @@ import java.util.Arrays;
 public class Start_Activity extends AppCompatActivity {
     private TextView tvReg, loginFacebook;
     private CallbackManager mCallbackManager;
+    private LoginButton login_button_with_facebook;
     private FirebaseAuth mAuth;
     private static final String TAG = "FACE_LOG";
+    private static final String EMAIL = "email";
+
     ProgressDialog pd;
 
     @Override
@@ -54,7 +61,13 @@ public class Start_Activity extends AppCompatActivity {
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.gray_dark));
         tvReg = (TextView) findViewById(R.id.tvReg);
         loginFacebook = (TextView) findViewById(R.id.loginFacebook);
+
+        login_button_with_facebook = findViewById(R.id.login_button_with_facebook);
         mAuth = FirebaseAuth.getInstance();
+
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        AppEventsLogger.activateApp(this.getApplication());
+
         mCallbackManager = CallbackManager.Factory.create();
         SpannableString ss = new SpannableString("Bạn chưa có tài khoản? Đăng Ký");
 
@@ -70,6 +83,32 @@ public class Start_Activity extends AppCompatActivity {
         tvReg.setText(ss);
         tvReg.setMovementMethod(LinkMovementMethod.getInstance());
 
+        LoginManager.getInstance().registerCallback(mCallbackManager,
+                new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
+                        handleFacebookAccessToken(loginResult.getAccessToken());
+                        closeProgressDialog();
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        // App code
+                    }
+
+                    @Override
+                    public void onError(FacebookException exception) {
+                        // App code
+                    }
+                });
+
+        login_button_with_facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                LoginManager.getInstance().logInWithReadPermissions(Start_Activity.this, Arrays.asList("public_profile"));
+            }
+        });
 
         loginFacebook.setOnClickListener(new View.OnClickListener() {
             @Override

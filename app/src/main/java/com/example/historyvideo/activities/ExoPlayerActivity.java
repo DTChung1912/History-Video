@@ -1,22 +1,55 @@
 package com.example.historyvideo.activities;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.historyvideo.R;
-import com.google.android.exoplayer2.SimpleExoPlayer;
-import com.google.android.exoplayer2.ui.StyledPlayerView;
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
-public class ExoPlayerActivity extends Activity {
-    private StyledPlayerView styledPlayerView;
-    private SimpleExoPlayer player;
+import com.example.historyvideo.R;
+import com.google.android.exoplayer2.C;
+import com.google.android.exoplayer2.ExoPlayer;
+import com.google.android.exoplayer2.MediaItem;
+import com.google.android.exoplayer2.drm.DrmSessionManagerProvider;
+import com.google.android.exoplayer2.source.MediaSource;
+import com.google.android.exoplayer2.ui.PlayerControlView;
+import com.google.android.exoplayer2.ui.PlayerView;
+import com.google.android.exoplayer2.upstream.DataSource;
+import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
+import com.google.android.exoplayer2.upstream.FileDataSource;
+import com.google.android.exoplayer2.upstream.LoadErrorHandlingPolicy;
+import com.google.android.exoplayer2.util.Util;
+
+public class ExoPlayerActivity extends Activity implements MediaSource.Factory{
+    private final String STATE_RESUME_WINDOW = "resumeWindow";
+    private final String STATE_RESUME_POSITION = "resumePosition";
+    private final String STATE_PLAYER_FULLSCREEN = "playerFullscreen";
+
+    private PlayerView playerView;
+    private ExoPlayer player;
     private ProgressBar progressBar;
     private long backTime;
+
+    private MediaSource mVideoSource;
+    private boolean mExoPlayerFullscreen = false;
+    private FrameLayout mFullScreenButton;
+    private ImageView mFullScreenIcon;
+    private Dialog mFullScreenDialog;
+    private  DataSource.Factory dataSourceFactory;
+
+    private int mResumeWindow;
+    private long mResumePosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +58,28 @@ public class ExoPlayerActivity extends Activity {
         setContentView(R.layout.activity_exo_player);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        styledPlayerView = findViewById(R.id.exoplayer);
+        playerView = findViewById(R.id.exoplayer);
         progressBar = findViewById(R.id.progressBar);
         //Toast.makeText(this, Link, Toast.LENGTH_SHORT).show();
 
-//        String Link = getIntent().getStringExtra("Link");
-//        String Sub = getIntent().getStringExtra("Link_Sub");
+        dataSourceFactory = new DefaultDataSourceFactory(this, Util.getUserAgent(this, getString(R.string.app_name)));
+
+
+        String Link = getIntent().getStringExtra("Link");
+        String Sub = getIntent().getStringExtra("Link_Sub");
 
 //        initPlayer(Link, Sub);
+        player = new ExoPlayer.Builder(this).build();
+        playerView.setPlayer(player);
+        // Build the media item.
+        MediaItem mediaItem = MediaItem.fromUri(Link);
+// Set the media item to be played.
+        player.setMediaItem(mediaItem);
+// Prepare the player.
+        player.prepare();
+// Start the playback.
+        player.play();
+
     }
 
     @Override
@@ -127,5 +174,94 @@ public class ExoPlayerActivity extends Activity {
             Toast.makeText(this, "Nhấn Back Một Lần Nữa Để Thoát", Toast.LENGTH_SHORT).show();
         }
         backTime = System.currentTimeMillis();
+    }
+
+    private void initFullscreenDialog() {
+
+        mFullScreenDialog = new Dialog(this, android.R.style.Theme_Black_NoTitleBar_Fullscreen) {
+            public void onBackPressed() {
+                if (mExoPlayerFullscreen)
+//                    closeFullscreenDialog();
+                super.onBackPressed();
+            }
+        };
+    }
+//
+//
+//    private void openFullscreenDialog() {
+//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+//        ((ViewGroup) playerView.getParent()).removeView(playerView);
+//        mFullScreenDialog.addContentView(playerView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+//        mFullScreenIcon.setImageDrawable(ContextCompat.getDrawable(ExoPlayerActivity.this, R.drawable.ic_fullscreen));
+//        mExoPlayerFullscreen = true;
+//        mFullScreenDialog.show();
+//
+//    }
+//
+//
+//    private void closeFullscreenDialog() {
+//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+//        ((ViewGroup) playerView.getParent()).removeView(playerView);
+//        ((FrameLayout) findViewById(R.id.main_media_frame)).addView(playerView);
+//        mExoPlayerFullscreen = false;
+//        mFullScreenDialog.dismiss();
+//        mFullScreenIcon.setImageDrawable(ContextCompat.getDrawable(ExoPlayerActivity.this, R.drawable.ic_fullscreen_exit));
+//
+//    }
+//
+//
+//    private void initFullscreenButton() {
+//
+//        PlayerControlView controlView = playerView.findViewById(R.id.exo_controller);
+//        mFullScreenIcon = controlView.findViewById(R.id.exo_fullscreen_icon);
+//        mFullScreenButton = controlView.findViewById(R.id.exo_fullscreen_button);
+//        mFullScreenButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (!mExoPlayerFullscreen)
+//                    openFullscreenDialog();
+//                else
+//                    closeFullscreenDialog();
+//            }
+//        });
+//
+//    }
+//
+//    private void initExoPlayer() {
+//
+//        player = FileDataSource.Factory.newSimpleInstance(this);
+//        playerView.setPlayer(player);
+//
+//        boolean haveResumePosition = mResumeWindow != C.INDEX_UNSET;
+//
+//        if (haveResumePosition) {
+//            player.seekTo(mResumeWindow, mResumePosition);
+//        }
+//        String contentUrl = getString(R.string.content_url);
+//        mVideoSource = buildMediaSource(Uri.parse(contentUrl));
+//
+//        player.prepare(mVideoSource);
+//        player.setPlayWhenReady(true);
+//
+//    }
+
+    @Override
+    public MediaSource.Factory setDrmSessionManagerProvider(@Nullable DrmSessionManagerProvider drmSessionManagerProvider) {
+        return null;
+    }
+
+    @Override
+    public MediaSource.Factory setLoadErrorHandlingPolicy(@Nullable LoadErrorHandlingPolicy loadErrorHandlingPolicy) {
+        return null;
+    }
+
+    @Override
+    public int[] getSupportedTypes() {
+        return new int[0];
+    }
+
+    @Override
+    public MediaSource createMediaSource(MediaItem mediaItem) {
+        return null;
     }
 }

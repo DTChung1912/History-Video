@@ -1,7 +1,5 @@
 package com.example.historyvideo.model;
 
-
-
 import android.annotation.SuppressLint;
 import android.util.Log;
 

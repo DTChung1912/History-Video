@@ -28,6 +28,7 @@ public class ChangePassword_Activity extends AppCompatActivity {
     EditText edtCurrentPassword, edtNewPassword, edtReenterPassword;
     Button btnChange;
     ProgressDialog pd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,12 +39,9 @@ public class ChangePassword_Activity extends AppCompatActivity {
         btnChange = (Button) findViewById(R.id.btnChange);
         btnChange.setEnabled(false);
 
-
-
         TextWatcher tw = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
@@ -57,7 +55,6 @@ public class ChangePassword_Activity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-
             }
         };
         edtCurrentPassword.addTextChangedListener(tw);
@@ -97,7 +94,6 @@ public class ChangePassword_Activity extends AppCompatActivity {
             }
         });
     }
-
 
     public void clickChange(View view) {
         showProgressDialog();

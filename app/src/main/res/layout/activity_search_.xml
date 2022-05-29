@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.Search_Activity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".activities.Search_Activity">
+
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -34,16 +35,14 @@
                 android:layout_alignParentRight="true"
                 android:layout_weight="1"
                 android:maxLines="1"
-                android:text="KQTK">
-
-            </androidx.appcompat.widget.SearchView>
+                android:text="KQTK" />
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
     <GridView
         android:id="@+id/gvSearch"
-        android:columnWidth="110dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:numColumns="3"></GridView>
+        android:columnWidth="110dp"
+        android:numColumns="3" />
 </LinearLayout>
