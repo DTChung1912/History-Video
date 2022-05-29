@@ -27,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class ManagerAddPhim_Activity extends AppCompatActivity {
+public class ManagerAddVideo_Activity extends AppCompatActivity {
     DatabaseReference mData;
     EditText edtTenPhim, edtLinkPhim, edtLinkSub, edtLinkPoster, edtMoTa, edtDienVien;
     Spinner spTheLoai;
@@ -45,7 +45,7 @@ public class ManagerAddPhim_Activity extends AppCompatActivity {
         initUI();
 
         arrayList = new ArrayList<>();
-        adapter = new ArrayAdapter(ManagerAddPhim_Activity.this, android.R.layout.simple_spinner_item, arrayList);
+        adapter = new ArrayAdapter(ManagerAddVideo_Activity.this, android.R.layout.simple_spinner_item, arrayList);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spTheLoai.setAdapter(adapter);
 
@@ -130,7 +130,7 @@ public class ManagerAddPhim_Activity extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
                     clearText();
-                    Toast.makeText(ManagerAddPhim_Activity.this, "Thêm Thành Công", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ManagerAddVideo_Activity.this, "Thêm Thành Công", Toast.LENGTH_SHORT).show();
                 }
             }
         });

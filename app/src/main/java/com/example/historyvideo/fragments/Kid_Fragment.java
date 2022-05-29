@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.historyvideo.R;
 import com.example.historyvideo.activities.DetailActivity;
-import com.example.historyvideo.adapter.Phim_Adapter;
+import com.example.historyvideo.adapter.Video_Adapter;
 import com.example.historyvideo.model.Phim;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,7 +35,7 @@ public class Kid_Fragment extends Fragment {
     View view;
     private GridView gridviewKid;
     private ArrayList<Phim> arrayList;
-    private Phim_Adapter adapter;
+    private Video_Adapter adapter;
     private RecyclerView rcRelated;
     private List<String> listKey;
 
@@ -48,7 +48,7 @@ public class Kid_Fragment extends Fragment {
         gridviewKid = (GridView) view.findViewById(R.id.gvKidz);
 
         arrayList = new ArrayList<>();
-        adapter = new Phim_Adapter(getContext(), R.layout.custom_grid_item, arrayList);
+        adapter = new Video_Adapter(getContext(), R.layout.custom_grid_item, arrayList);
         gridviewKid.setAdapter(adapter);
         readData();
 

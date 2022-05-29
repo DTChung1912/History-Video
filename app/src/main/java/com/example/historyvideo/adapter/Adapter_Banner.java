@@ -23,13 +23,13 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class Adapter_QC extends ArrayAdapter<QuangCao> {
+public class Adapter_Banner extends ArrayAdapter<QuangCao> {
     private List<QuangCao> quangCaoList;
     private Context context;
     private LayoutInflater inflater;
     DatabaseReference mData;
 
-    public Adapter_QC(@NonNull Context context, int resource, @NonNull List<QuangCao> objects) {
+    public Adapter_Banner(@NonNull Context context, int resource, @NonNull List<QuangCao> objects) {
         super(context, resource, objects);
         this.quangCaoList = objects;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

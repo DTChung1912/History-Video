@@ -22,7 +22,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.core.content.ContextCompat;
 
 import com.example.historyvideo.R;
-import com.example.historyvideo.adapter.Adapter_Phim_Admin;
+import com.example.historyvideo.adapter.Adapter_Video_Admin;
 import com.example.historyvideo.model.Phim;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -38,9 +38,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class QL_PhimActivity extends AppCompatActivity {
+public class VideoManagement_Activity extends AppCompatActivity {
     ArrayList<Phim> arrayList;
-    Adapter_Phim_Admin adapter;
+    Adapter_Video_Admin adapter;
     DatabaseReference mData;
     GridView gvPhim;
     SearchView searchView;
@@ -59,14 +59,14 @@ public class QL_PhimActivity extends AppCompatActivity {
         InitUI();
 
         arrayList = new ArrayList<>();
-        adapter = new Adapter_Phim_Admin(this, R.layout.grid_single_item, arrayList);
+        adapter = new Adapter_Video_Admin(this, R.layout.grid_single_item, arrayList);
         gvPhim.setAdapter(adapter);
         fillDataAll();
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(QL_PhimActivity.this, ManagerAddPhim_Activity.class);
+                Intent intent = new Intent(VideoManagement_Activity.this, ManagerAddVideo_Activity.class);
                 startActivity(intent);
             }
         });
@@ -164,10 +164,10 @@ public class QL_PhimActivity extends AppCompatActivity {
 
 
     private void dialogEdit(final String key) {
-        dialogHoi = new Dialog(QL_PhimActivity.this);
+        dialogHoi = new Dialog(VideoManagement_Activity.this);
         dialogHoi.setCanceledOnTouchOutside(false);
         dialogHoi.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialogHoi.setContentView(R.layout.dialog_remove_phim);
+        dialogHoi.setContentView(R.layout.dialog_remove_video);
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
         lp.copyFrom(dialogHoi.getWindow().getAttributes());
         lp.width = WindowManager.LayoutParams.MATCH_PARENT;
@@ -189,7 +189,7 @@ public class QL_PhimActivity extends AppCompatActivity {
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent manhinhDetail = new Intent(QL_PhimActivity.this, Phim_InfoActivity.class);
+                Intent manhinhDetail = new Intent(VideoManagement_Activity.this, VideoInfo_Activity.class);
                 manhinhDetail.putExtra("Phim_UID", key);
                 startActivity(manhinhDetail);
             }
@@ -199,7 +199,7 @@ public class QL_PhimActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(QL_PhimActivity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(VideoManagement_Activity.this);
 
                 builder.setTitle("Xóa Phim");
                 builder.setMessage("Bạn Muốn Xóa Phim Này?");
@@ -217,7 +217,7 @@ public class QL_PhimActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(QL_PhimActivity.this, "Xóa Phim Thành Công", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(VideoManagement_Activity.this, "Xóa Phim Thành Công", Toast.LENGTH_SHORT).show();
                                     //reloadData();
                                     dialogHoi.dismiss();
                                 }

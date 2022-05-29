@@ -34,7 +34,7 @@ public class Watch_Later_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_watch__later_);
+        setContentView(R.layout.activity_watch_later);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Window window = this.getWindow();
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.gray_dark));

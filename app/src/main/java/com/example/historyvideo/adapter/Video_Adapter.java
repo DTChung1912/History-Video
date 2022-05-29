@@ -18,16 +18,15 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class Adapter_Phim_Admin extends ArrayAdapter<Phim> {
-
+public class Video_Adapter extends ArrayAdapter<Phim> {
     private List<Phim> phimList;
-    private LayoutInflater inflater;
+    private Context context;
+    private LayoutInflater layoutInflater;
 
-
-    public Adapter_Phim_Admin(@NonNull Context context, int resource, @NonNull List<Phim> objects) {
+    public Video_Adapter(@NonNull Context context, int resource, @NonNull List<Phim> objects) {
         super(context, resource, objects);
         this.phimList = objects;
-        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @NonNull
@@ -36,9 +35,9 @@ public class Adapter_Phim_Admin extends ArrayAdapter<Phim> {
         ViewHolder holder;
         if (convertView == null) {
             holder = new ViewHolder();
-            convertView = inflater.inflate(R.layout.grid_single_item, parent, false);
-            holder.imgHinh = (ImageView) convertView.findViewById(R.id.imgAnh);
-            holder.tvTen = (TextView) convertView.findViewById(R.id.tvTenPhimAdmin);
+            convertView = layoutInflater.inflate(R.layout.custom_grid_item, parent, false);
+            holder.imgHinh = (ImageView) convertView.findViewById(R.id.imgHinh);
+            holder.tvName = (TextView) convertView.findViewById(R.id.tvTen);
 
             convertView.setTag(holder);
         } else {
@@ -51,13 +50,13 @@ public class Adapter_Phim_Admin extends ArrayAdapter<Phim> {
                 .resize(6000, 2000)
                 .onlyScaleDown()
                 .into(holder.imgHinh);
-        holder.tvTen.setText(phim.getTenPhim());
+        holder.tvName.setText(phim.getTenPhim());
 
         return convertView;
     }
 
     public static class ViewHolder {
         public ImageView imgHinh;
-        public TextView tvTen;
+        public TextView tvName;
     }
 }

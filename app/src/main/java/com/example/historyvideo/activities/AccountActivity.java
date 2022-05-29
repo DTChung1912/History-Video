@@ -278,7 +278,7 @@ public class AccountActivity extends AppCompatActivity {
         edtPassword = (EditText) findViewById(R.id.edtPassword);
         tilPhone = (TextInputLayout) findViewById(R.id.tilPhone);
         tilPassword = (TextInputLayout) findViewById(R.id.tilPassword);
-        tvPhoto = (TextView) findViewById(R.id.tveditPhoto);
+        tvPhoto = (TextView) findViewById(R.id.tvEditPhoto);
         tvTitle = (TextView) findViewById(R.id.tvTitle);
         btnSave = (Button) findViewById(R.id.btnSave);
         btnChangePass = (ImageButton) findViewById(R.id.btnChangePass);

@@ -24,7 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.example.historyvideo.R;
-import com.example.historyvideo.adapter.Adapter_QC;
+import com.example.historyvideo.adapter.Adapter_Banner;
 import com.example.historyvideo.model.Phim;
 import com.example.historyvideo.model.QuangCao;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -43,7 +43,7 @@ public class BannerManagerActivity extends AppCompatActivity {
     ListView listBanner;
     ArrayList<QuangCao> arrayList;
     ArrayList<Phim> listPhim;
-    Adapter_QC adapter;
+    Adapter_Banner adapter;
     FloatingActionButton btnAdd;
     DatabaseReference mData;
     SearchView searchBanner;
@@ -63,7 +63,7 @@ public class BannerManagerActivity extends AppCompatActivity {
 
         arrayList = new ArrayList<>();
         listPhim = new ArrayList<>();
-        adapter = new Adapter_QC(BannerManagerActivity.this, R.layout.banner_list_item, arrayList);
+        adapter = new Adapter_Banner(BannerManagerActivity.this, R.layout.banner_list_item, arrayList);
         listBanner.setAdapter(adapter);
 
         reloadQC();
@@ -101,7 +101,7 @@ public class BannerManagerActivity extends AppCompatActivity {
                 dialogHoi = new Dialog(BannerManagerActivity.this);
                 dialogHoi.setCanceledOnTouchOutside(false);
                 dialogHoi.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialogHoi.setContentView(R.layout.dialog_remove_phim);
+                dialogHoi.setContentView(R.layout.dialog_remove_video);
                 WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
                 lp.copyFrom(dialogHoi.getWindow().getAttributes());
                 lp.width = WindowManager.LayoutParams.MATCH_PARENT;

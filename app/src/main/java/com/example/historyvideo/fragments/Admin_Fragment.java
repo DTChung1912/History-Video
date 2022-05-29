@@ -18,7 +18,7 @@ import com.example.historyvideo.activities.All_UserActivity;
 import com.example.historyvideo.activities.BannerManagerActivity;
 import com.example.historyvideo.activities.CategoryActivity;
 import com.example.historyvideo.activities.FeedbackManagerActivity;
-import com.example.historyvideo.activities.QL_PhimActivity;
+import com.example.historyvideo.activities.VideoManagement_Activity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -68,7 +68,7 @@ public class Admin_Fragment extends Fragment {
         linearPhim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(view.getContext(), QL_PhimActivity.class);
+                Intent intent = new Intent(view.getContext(), VideoManagement_Activity.class);
                 startActivity(intent);
             }
         });

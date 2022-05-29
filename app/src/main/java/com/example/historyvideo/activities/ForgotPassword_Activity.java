@@ -25,7 +25,7 @@ public class ForgotPassword_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forgot_password_);
+        setContentView(R.layout.activity_forgot_password);
         Window w = this.getWindow();
         w.setStatusBarColor(getResources().getColor(R.color.gray_dark));
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);

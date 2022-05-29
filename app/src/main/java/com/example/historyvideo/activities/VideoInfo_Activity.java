@@ -24,7 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Phim_InfoActivity extends AppCompatActivity {
+public class VideoInfo_Activity extends AppCompatActivity {
     EditText edtID, edtTen, edtLink, edtSub, edtPoster, edtCate, edtDes, edtActor;
     Spinner spTheLoai;
     DatabaseReference mData;
@@ -37,14 +37,14 @@ public class Phim_InfoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phim__info);
+        setContentView(R.layout.activity_video_info);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Window window = this.getWindow();
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.gray_dark));
         InitUI();
 
         arrayList = new ArrayList<>();
-        adapter = new ArrayAdapter(Phim_InfoActivity.this, android.R.layout.simple_spinner_item, arrayList);
+        adapter = new ArrayAdapter(VideoInfo_Activity.this, android.R.layout.simple_spinner_item, arrayList);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spTheLoai.setAdapter(adapter);
 

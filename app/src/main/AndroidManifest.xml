@@ -69,10 +69,10 @@
         <!-- android:theme="@style/Base.Theme.AppCompat" -->
         <!-- tools:ignore="MissingClass" /> -->
         <activity android:name=".activities.AccountActivity" />
-        <activity android:name=".activities.ManagerAddPhim_Activity" />
+        <activity android:name=".activities.ManagerAddVideo_Activity" />
         <activity android:name=".activities.Watch_Later_Activity" />
-        <activity android:name=".activities.QL_PhimActivity" />
-        <activity android:name=".activities.Phim_InfoActivity" />
+        <activity android:name=".activities.VideoManagement_Activity" />
+        <activity android:name=".activities.VideoInfo_Activity" />
         <activity android:name=".activities.All_UserActivity" />
         <activity android:name=".activities.UserInformationActivity" />
         <activity android:name=".activities.BannerManagerActivity" />
@@ -81,5 +81,4 @@
         <activity android:name=".activities.CategoryActivity" />
         <activity android:name=".activities.DetailBaseByCategoryActivity" />
     </application>
-
 </manifest>
